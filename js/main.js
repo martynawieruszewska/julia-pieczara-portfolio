@@ -612,3 +612,227 @@ if (
         calculateCarouselDistance
     );
 }
+
+/* =========================================================
+   SERVICES — RANDOM SAFE TYPEWRITER
+========================================================= */
+
+const servicesTypingLayer =
+    document.querySelector(".services-typing-layer");
+
+const servicesHero =
+    document.querySelector(".services-hero");
+
+const servicesTypingWords = [
+    "SOCIAL MEDIA",
+    "FOTO & VIDEO",
+    "PAID ADS",
+    "STRATEGIA",
+    "BRANDING",
+    "STRONY WWW"
+];
+
+const servicesProtectedSelectors = [
+    ".services-hero__eyebrow",
+    ".services-hero__title",
+    ".services-hero__description",
+    ".services-hero__tools"
+];
+
+let servicesTypingWordIndex = 0;
+
+function isServicesTypingPositionSafe(element) {
+    if (!servicesHero) {
+        return false;
+    }
+
+    const heroRect =
+        servicesHero.getBoundingClientRect();
+
+    const elementRect =
+        element.getBoundingClientRect();
+
+    /* omijamy górę strony / navbar */
+    const safeTop =
+        heroRect.top +
+        heroRect.height * 0.18;
+
+    if (elementRect.top < safeTop) {
+        return false;
+    }
+
+    /* nie pozwalamy wyjechać poza ekran */
+    const edgeGap = 25;
+
+    if (
+        elementRect.left < heroRect.left + edgeGap ||
+        elementRect.right > heroRect.right - edgeGap ||
+        elementRect.bottom > heroRect.bottom - edgeGap
+    ) {
+        return false;
+    }
+
+    /* omijamy tekst i pozostałe elementy hero */
+    for (const selector of servicesProtectedSelectors) {
+
+        const protectedElement =
+            document.querySelector(selector);
+
+        if (!protectedElement) {
+            continue;
+        }
+
+        const protectedRect =
+            protectedElement.getBoundingClientRect();
+
+        const gap = 35;
+
+        const collision =
+            elementRect.left <
+                protectedRect.right + gap &&
+            elementRect.right >
+                protectedRect.left - gap &&
+            elementRect.top <
+                protectedRect.bottom + gap &&
+            elementRect.bottom >
+                protectedRect.top - gap;
+
+        if (collision) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function findServicesTypingPosition(element) {
+
+    for (let attempt = 0; attempt < 150; attempt++) {
+
+        const randomX =
+            2 + Math.random() * 90;
+
+        const randomY =
+            18 + Math.random() * 75;
+
+        element.style.left =
+            `${randomX}%`;
+
+        element.style.top =
+            `${randomY}%`;
+
+        if (
+            isServicesTypingPositionSafe(element)
+        ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function createServicesTypingWord() {
+
+    if (
+        !servicesTypingLayer ||
+        !servicesHero
+    ) {
+        return;
+    }
+
+    const word =
+        servicesTypingWords[
+            servicesTypingWordIndex
+        ];
+
+    const element =
+        document.createElement("span");
+
+    element.className =
+        "services-typing-word";
+
+    element.textContent = word;
+    element.style.visibility = "hidden";
+
+    servicesTypingLayer.appendChild(
+        element
+    );
+
+    const positionFound =
+        findServicesTypingPosition(
+            element
+        );
+
+    if (!positionFound) {
+
+        element.remove();
+
+        setTimeout(
+            createServicesTypingWord,
+            300
+        );
+
+        return;
+    }
+
+    element.textContent = "";
+    element.style.visibility = "visible";
+
+    requestAnimationFrame(() => {
+        element.classList.add(
+            "is-visible"
+        );
+    });
+
+    let letterIndex = 0;
+
+    const typingInterval =
+        setInterval(() => {
+
+            element.textContent +=
+                word.charAt(letterIndex);
+
+            letterIndex++;
+
+            if (
+                letterIndex >=
+                word.length
+            ) {
+
+                clearInterval(
+                    typingInterval
+                );
+
+                setTimeout(() => {
+
+                    element.classList.remove(
+                        "is-visible"
+                    );
+
+                    setTimeout(() => {
+
+                        element.remove();
+
+                        servicesTypingWordIndex =
+                            (
+                                servicesTypingWordIndex +
+                                1
+                            ) %
+                            servicesTypingWords.length;
+
+                        createServicesTypingWord();
+
+                    }, 220);
+
+                }, 700);
+            }
+
+        }, 90);
+}
+
+if (
+    servicesTypingLayer &&
+    servicesHero
+) {
+    createServicesTypingWord();
+}

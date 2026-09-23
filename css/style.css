@@ -7,7 +7,7 @@
     --white: #ffffff;
 
     --font-main: "Manrope", sans-serif;
-    --font-display: "Italiana", serif;
+    --font-display: "Syncopate", sans-serif;
 }
 
 
@@ -177,17 +177,23 @@ img {
 }
 
 .hero__title {
+
     margin: 0;
 
     font-family: var(--font-display);
-    font-size: clamp(125px, 14vw, 260px);
+
+    font-size: clamp(90px, 10.5vw, 200px);
+
     font-weight: 400;
 
-    line-height: 0.74;
+    line-height: 0.85;
 
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
 
     white-space: nowrap;
+
+    transform: translateX(-0.08em);
+
 }
 
 .hero__info {
@@ -1258,12 +1264,11 @@ img {
     height: 140px;
 
     background-image:
-        url("../assets/backgrounds/footer.png");
+        url("../assets/backgrounds/footer.svg");
 
     background-repeat: no-repeat;
 
-    background-size: cover;
-
+    background-size: 115% auto;
     background-position: center;
 
     color: var(--white);
@@ -1473,4 +1478,436 @@ img {
     .stat__number {
         animation: none !important;
     }
+}
+/* =========================================================
+   SERVICES — HERO
+========================================================= */
+
+.services-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("../assets/backgrounds/uslugi1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+/* CONTENT
+========================================================= */
+
+.services-hero__content {
+    position: absolute;
+
+    top: 38%;
+    left: 11.5%;
+
+    z-index: 2;
+}
+
+
+/* JAK MOGĘ POMÓC?
+========================================================= */
+
+.services-hero__eyebrow {
+    margin: 0 0 clamp(35px, 3.5vw, 65px);
+
+    font-family: var(--font-main);
+    font-size: clamp(23px, 1.75vw, 32px);
+    font-weight: 800;
+
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    color: #000;
+}
+
+
+/* USŁUGI
+========================================================= */
+
+.services-hero__title {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(75px, 8vw, 150px);
+    font-weight: 400;
+
+    line-height: 0.9;
+    letter-spacing: 0;
+
+    color: #fff;
+    white-space: nowrap;
+
+    /*
+       Syncopate ma trochę pustej przestrzeni
+       przed pierwszym znakiem — tak samo jak
+       zauważyliśmy przy PORTFOLIO.
+    */
+    transform: translateX(-0.08em);
+}
+
+
+/* DESCRIPTION
+========================================================= */
+
+.services-hero__description {
+    margin: clamp(32px, 3vw, 55px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 400;
+
+    line-height: 1.48;
+    letter-spacing: 0.14em;
+
+    color: #fff;
+    white-space: nowrap;
+}
+
+
+/* TOOLS / PROGRAMS
+========================================================= */
+
+.services-hero__tools {
+    position: absolute;
+
+    left: 11.5%;
+    bottom: 9%;
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(20px, 2vw, 40px);
+
+    z-index: 2;
+}
+
+.services-hero__tool {
+    display: block;
+
+    width: auto;
+    height: clamp(32px, 2.6vw, 50px);
+
+    object-fit: contain;
+
+    transform: scale(1);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+
+    cursor: default;
+}
+
+.services-hero__tool:hover {
+    transform: scale(1.17);
+}
+
+/* =========================================================
+   SERVICES — TYPEWRITER BACKGROUND
+========================================================= */
+
+.services-typing-layer {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.services-typing-word {
+    position: absolute;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(14px, 1.15vw, 22px);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.18s ease;
+}
+
+.services-typing-word.is-visible {
+    opacity: 1;
+}
+
+.services-hero__tool[src*="app4.png"] {
+    position: relative;
+    top: 7px;
+}
+
+/* =========================================================
+   SERVICES — SERVICE SECTIONS
+========================================================= */
+
+.service-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.service-section--social {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+
+/* CONTENT
+========================================================= */
+
+.service-section__content {
+    position: absolute;
+
+    top: 34%;
+    left: 14%;
+
+    width: 72%;
+}
+
+
+/* NUMBER + TITLE
+========================================================= */
+
+.service-section__heading {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(18px, 1.5vw, 30px);
+}
+
+.service-section__number {
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #000;
+}
+
+.service-section__heading h2 {
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(17px, 1.45vw, 27px);
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #000;
+}
+
+
+/* SUBTITLE
+========================================================= */
+
+.service-section__subtitle {
+    margin: clamp(32px, 2.8vw, 52px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(16px, 1.55vw, 29px);
+    font-weight: 400;
+
+    line-height: 1.2;
+    letter-spacing: 0.20em;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+
+/* DESCRIPTION
+========================================================= */
+
+.service-section__description {
+    margin: clamp(28px, 2.5vw, 46px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(14px, 1.2vw, 22px);
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    color: #000;
+}
+
+
+/* TAGS
+========================================================= */
+
+.service-section__tags {
+    margin-top: clamp(30px, 3vw, 55px);
+
+    width: 82%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: clamp(12px, 1vw, 20px);
+}
+
+.service-section__tags span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: clamp(44px, 3.8vw, 70px);
+
+    padding: 0 20px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+
+    font-family: var(--font-main);
+    font-size: clamp(12px, 1.15vw, 21px);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.18em;
+
+    color: #fff;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+
+    cursor: default;
+}
+
+.service-section__tags span:hover {
+    transform: scale(1.05);
+
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #000;
+}
+
+/* =========================================================
+   SERVICE 02 — FOTO & VIDEO
+========================================================= */
+
+.service-section--photo {
+    background-image: url("../assets/backgrounds/uslugi3.svg");
+}
+
+
+/* PHOTO TAG LAYOUT
+========================================================= */
+
+.service-section__tags--photo {
+    width: 84%;
+
+    grid-template-columns:
+        0.75fr
+        0.75fr
+        1.1fr
+        1fr;
+}
+
+
+/* PRYWATNE STUDIO
+========================================================= */
+
+.service-section__tags .service-section__tag--dark {
+    border-color: #000;
+    color: #000;
+}
+
+.service-section__tags .service-section__tag--dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* =========================================================
+   SERVICE 03 — PERFORMANCE
+========================================================= */
+
+.service-section--performance {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+
+/* TAG LAYOUT
+========================================================= */
+
+.service-section__tags--performance {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.6fr;
+}
+
+.service-section__tags--performance .service-tag--wide {
+    grid-column: auto;
+}
+
+/* =========================================================
+   SERVICE 04 — STRATEGIA & BRANDING
+========================================================= */
+
+.service-section--branding {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+
+/* TAG LAYOUT
+========================================================= */
+
+.service-section__tags--branding {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.6fr;
+}
+
+.service-section__tags--branding .service-tag--personal {
+    grid-column: 1 / 3;
+}
+
+/* =========================================================
+   SERVICE 05 — STRONY WWW
+========================================================= */
+
+.service-section--web {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+
+/* TAG LAYOUT
+========================================================= */
+
+.service-section__tags--web {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.4fr;
 }
