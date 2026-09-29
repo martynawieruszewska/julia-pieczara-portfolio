@@ -1344,6 +1344,7 @@ img {
 
 .opinions__description p {
     margin: 0;
+    color: #000;
 }
 
 .opinions__description p + p {
