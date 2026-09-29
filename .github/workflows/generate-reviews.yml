@@ -1,0 +1,45 @@
+name: Generate reviews JSON
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/opinie.xlsx"
+      - "scripts/generate_reviews.py"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+
+      - name: Ustaw Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Zainstaluj openpyxl
+        run: pip install openpyxl
+
+      - name: Wygeneruj opinie.json
+        run: python scripts/generate_reviews.py
+
+      - name: Zapisz wygenerowany JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/opinie.json
+
+          if git diff --cached --quiet; then
+            echo "Brak zmian w opinie.json"
+          else
+            git commit -m "Update reviews JSON"
+            git push
+          fi
