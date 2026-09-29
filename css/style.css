@@ -5,7 +5,6 @@
 :root {
     --black: #000000;
     --white: #ffffff;
-
     --font-main: "Manrope", sans-serif;
     --font-display: "Syncopate", sans-serif;
 }
@@ -25,9 +24,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-
     width: 100%;
-
     overflow-x: hidden;
 }
 
@@ -38,16 +35,13 @@ html {
 body {
     background: var(--white);
     color: var(--black);
-
     font-family: var(--font-main);
 }
 
 main {
     width: 100%;
-
     margin: 0;
     padding: 0;
-
     overflow: hidden;
 }
 
@@ -71,12 +65,9 @@ img {
 
 .nav {
     position: fixed;
-
     top: 6.7%;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 59%;
 
     display: flex;
@@ -92,9 +83,7 @@ img {
 
 .nav--hidden {
     transform: translate(-50%, -180%);
-
     opacity: 0;
-
     pointer-events: none;
 }
 
@@ -105,9 +94,7 @@ img {
     font-size: clamp(10px, 0.79vw, 15px);
     font-weight: 400;
     line-height: 1;
-
     letter-spacing: 0.20em;
-
     white-space: nowrap;
 
     transform: scale(1);
@@ -124,7 +111,6 @@ img {
 
 .nav__link--active {
     font-weight: 800;
-
     transform: scale(1.15);
 }
 
@@ -134,67 +120,47 @@ img {
 
 
 /* =========================================================
-   01 — HERO
+   O MNIE — HERO
 ========================================================= */
 
 .hero {
     position: relative;
-
     width: 100%;
     height: calc(100vh + 8px);
-
     margin: 0;
 
     background-image: url("../assets/backgrounds/omnie1.svg");
     background-repeat: no-repeat;
-
-    /* NAJWAŻNIEJSZE */
     background-size: cover;
     background-position: center center;
 
     overflow: hidden;
-
     z-index: 1;
 }
 
-
-/* HERO CONTENT
---------------------------------------------------------- */
-
 .hero__content {
     position: absolute;
-
     top: 25%;
     left: 9%;
-
     width: 73%;
-
     z-index: 2;
 }
 
 .hero__title {
-
     margin: 0;
 
     font-family: var(--font-display);
-
     font-size: clamp(90px, 10.5vw, 200px);
-
     font-weight: 400;
-
     line-height: 0.85;
-
     letter-spacing: 0;
 
     white-space: nowrap;
-
     transform: translateX(-0.08em);
-
 }
 
 .hero__info {
     width: 100%;
-
     margin-top: clamp(52px, 5vw, 90px);
 }
 
@@ -204,9 +170,7 @@ img {
     font-family: var(--font-main);
     font-size: clamp(23px, 1.75vw, 32px);
     font-weight: 800;
-
     line-height: 1;
-
     letter-spacing: -0.025em;
 }
 
@@ -218,26 +182,19 @@ img {
     font-family: var(--font-main);
     font-size: clamp(20px, 1.65vw, 31px);
     font-weight: 400;
-
     line-height: 1.15;
-
     letter-spacing: -0.015em;
 
     white-space: nowrap;
 }
 
 .hero__description {
-    margin:
-        clamp(32px, 3vw, 55px)
-        0
-        0;
+    margin: clamp(32px, 3vw, 55px) 0 0;
 
     font-family: var(--font-main);
     font-size: clamp(13px, 1vw, 19px);
     font-weight: 400;
-
     line-height: 1.48;
-
     letter-spacing: 0.14em;
 
     white-space: nowrap;
@@ -247,72 +204,47 @@ img {
     font-weight: 400;
 }
 
-
-/* HERO LOGO
---------------------------------------------------------- */
-
 .hero__logo {
     position: absolute;
-
     left: 51.5%;
     bottom: 10%;
-
     transform: translateX(-50%);
 
     width: clamp(60px, 4.5vw, 86px);
     height: auto;
 
     object-fit: contain;
-
     z-index: 2;
 }
 
 
-/* HERO TYPEWRITER
---------------------------------------------------------- */
+/* =========================================================
+   O MNIE — HERO TYPEWRITER
+========================================================= */
 
 .hero__typing-layer {
     position: absolute;
-
     inset: 0;
-
     z-index: 1;
-
     pointer-events: none;
 }
 
 .hero__typing-word {
     position: absolute;
-
     margin: 0;
 
-    color: rgba(
-        255,
-        255,
-        255,
-        0.82
-    );
+    color: rgba(255, 255, 255, 0.82);
 
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
-
-    font-size:
-        clamp(14px, 1.15vw, 22px);
-
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(14px, 1.15vw, 22px);
     font-weight: 400;
-
     line-height: 1;
-
     letter-spacing: 0.08em;
 
     white-space: nowrap;
-
     opacity: 0;
 
-    transition:
-        opacity 0.18s ease;
+    transition: opacity 0.18s ease;
 }
 
 .hero__typing-word.is-visible {
@@ -321,44 +253,30 @@ img {
 
 
 /* =========================================================
-   02 — ABOUT
+   O MNIE — ABOUT
 ========================================================= */
 
 .about {
     position: relative;
 
     width: calc(100% + 4px);
-
     margin-left: -2px;
     margin-top: -8px;
     margin-bottom: 0;
 
     aspect-ratio: 1.78 / 1;
 
-    background-image:
-        url("../assets/backgrounds/omnie2.svg");
-
+    background-image: url("../assets/backgrounds/omnie2.svg");
     background-repeat: no-repeat;
-
-    background-size:
-        calc(100% + 10px)
-        calc(100% + 10px);
-
-    background-position:
-        center center;
+    background-size: calc(100% + 10px) calc(100% + 10px);
+    background-position: center center;
 
     overflow: hidden;
-
     z-index: 2;
 }
 
-
-/* ABOUT HEADING
---------------------------------------------------------- */
-
 .about__heading {
     position: absolute;
-
     top: 20.2%;
     left: 5.6%;
 }
@@ -369,74 +287,48 @@ img {
     color: var(--white);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(19px, 1.65vw, 31px);
-
+    font-size: clamp(19px, 1.65vw, 31px);
     font-weight: 800;
-
     line-height: 1;
 }
 
 .about__line {
     display: block;
 
-    width:
-        clamp(120px, 11.5vw, 215px);
-
+    width: clamp(120px, 11.5vw, 215px);
     height: 1px;
-
-    margin-top:
-        clamp(20px, 2vw, 37px);
+    margin-top: clamp(20px, 2vw, 37px);
 
     background: var(--white);
 }
 
-
-/* ABOUT TEXT
---------------------------------------------------------- */
-
 .about__text {
     position: absolute;
-
     top: 19.8%;
     right: 5.6%;
-
     width: 48%;
-
     margin: 0;
 
     color: var(--black);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(10px, 1.02vw, 19px);
-
+    font-size: clamp(10px, 1.02vw, 19px);
     font-weight: 400;
-
     line-height: 1.48;
-
     letter-spacing: 0.14em;
 
     text-align: right;
 }
 
 .about__text p {
-    margin:
-        0
-        0
-        clamp(25px, 3.3vw, 61px);
+    margin: 0 0 clamp(25px, 3.3vw, 61px);
 }
 
 .about__text strong {
     font-weight: 800;
 }
 
-.about__text p:nth-child(2) strong {
-    color: var(--white);
-}
-
+.about__text p:nth-child(2) strong,
 .about__text p:nth-child(3) strong:first-of-type {
     color: var(--white);
 }
@@ -449,39 +341,24 @@ img {
     margin-bottom: 0;
 }
 
-
-/* ABOUT INDUSTRIES
---------------------------------------------------------- */
-
 .about__industries {
     position: absolute;
-
     right: 5.6%;
-    left: auto;
     bottom: 10.2%;
-
-    width: auto;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
-    gap:
-        clamp(10px, 1.2vw, 22px);
+    gap: clamp(10px, 1.2vw, 22px);
 
     color: var(--white);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(13px, 1.3vw, 24px);
-
+    font-size: clamp(13px, 1.3vw, 24px);
     font-weight: 300;
-
     line-height: 1;
 
     white-space: nowrap;
-
     text-align: right;
 }
 
@@ -489,14 +366,12 @@ img {
     font-size: 0.65em;
 }
 
-.about__industries
-> span:not(.about__dot) {
+.about__industries > span:not(.about__dot) {
     display: inline-block;
 
     cursor: default;
 
     transform: scale(1);
-
     transform-origin: center;
 
     transition:
@@ -504,128 +379,88 @@ img {
         font-weight 0.25s ease;
 }
 
-.about__industries
-> span:not(.about__dot):hover {
+.about__industries > span:not(.about__dot):hover {
     transform: scale(1.18);
-
     font-weight: 500;
 }
 
 
 /* =========================================================
-   03 — EXPERIENCE
+   O MNIE — EXPERIENCE
 ========================================================= */
 
 .experience {
     position: relative;
 
     width: calc(100% + 8px);
-
     margin-left: -4px;
     margin-top: -4px;
     margin-bottom: 0;
 
     aspect-ratio: 1.805 / 0.82;
 
-    background-image:
-        url("../assets/backgrounds/omnie3.svg");
-
+    background-image: url("../assets/backgrounds/omnie3.svg");
     background-repeat: no-repeat;
-
     background-size: 115% auto;
-
-    background-position:
-        center center;
+    background-position: center center;
 
     overflow: hidden;
-
     z-index: 3;
 }
 
 
-/* STATS FRAME
---------------------------------------------------------- */
+/* STATS */
 
 .stats {
     position: absolute;
-
     top: 11%;
     left: 50%;
-
     transform: translateX(-50%);
 
     width: 76%;
     height: 28%;
 
-    border-left:
-        1px solid
-        rgba(255, 255, 255, 0.95);
-
-    border-right:
-        1px solid
-        rgba(255, 255, 255, 0.95);
-
-    border-bottom:
-        1px solid
-        rgba(255, 255, 255, 0.95);
-
+    border-left: 1px solid rgba(255, 255, 255, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.95);
     border-radius: 999px;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
 }
 
-.stats::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 6%;
-
-    width: 34%;
-    height: 1px;
-
-    background:
-        rgba(255, 255, 255, 0.95);
-}
-
+.stats::before,
 .stats::after {
     content: "";
 
     position: absolute;
-
     top: 0;
-    right: 6%;
 
     width: 34%;
     height: 1px;
 
-    background:
-        rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.stats::before {
+    left: 6%;
+}
+
+.stats::after {
+    right: 6%;
 }
 
 .stats__top-gap {
     display: none;
 }
 
-
-/* STATS CONTENT
---------------------------------------------------------- */
-
 .stat {
     position: relative;
-
     z-index: 2;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
@@ -636,30 +471,18 @@ img {
     display: inline-block;
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(42px, 4vw, 74px);
-
+    font-size: clamp(42px, 4vw, 74px);
     font-weight: 400;
-
     line-height: 1;
 
     transform-origin: center;
 }
 
-
-/*
-   TYLKO FINALNA LICZBA
-   wykonuje delikatny pop.
-*/
-
 .stat__number.is-finished {
-    animation:
-        numberFinish 0.6s ease;
+    animation: numberFinish 0.6s ease;
 }
 
 @keyframes numberFinish {
-
     0% {
         transform: scale(1);
     }
@@ -673,133 +496,81 @@ img {
     }
 }
 
-
 .stat__label {
-    margin-top:
-        clamp(14px, 1.5vw, 28px);
+    margin-top: clamp(14px, 1.5vw, 28px);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(13px, 1.25vw, 23px);
-
+    font-size: clamp(13px, 1.25vw, 23px);
     font-weight: 400;
-
     line-height: 1.1;
 }
 
 
-/* =========================================================
-   CLIENT LOGOS — INFINITE CAROUSEL
-========================================================= */
+/* CLIENT LOGOS */
 
 .clients {
     position: absolute;
-
     top: 52%;
     left: 50%;
-
     transform: translateX(-50%);
 
     width: 94%;
-
     overflow: hidden;
 }
 
 .clients__track {
     display: flex;
-
     align-items: center;
-
     justify-content: flex-start;
 
     width: max-content;
+    gap: clamp(28px, 2.7vw, 52px);
 
-    gap:
-        clamp(28px, 2.7vw, 52px);
-
-    animation:
-        clientsInfiniteScroll
-        32s
-        linear
-        infinite;
-
+    animation: clientsInfiniteScroll 32s linear infinite;
     will-change: transform;
 }
 
 .clients__track img {
     display: block;
-
-    flex:
-        0 0 auto;
+    flex: 0 0 auto;
 
     width: auto;
-
-    max-width:
-        clamp(65px, 6vw, 115px);
-
-    max-height:
-        clamp(40px, 5vw, 88px);
+    max-width: clamp(65px, 6vw, 115px);
+    max-height: clamp(40px, 5vw, 88px);
 
     object-fit: contain;
 }
 
-
-/*
-   Hover = pauza dokładnie
-   w aktualnym miejscu.
-*/
-
-.clients:hover
-.clients__track {
+.clients:hover .clients__track {
     animation-play-state: paused;
 }
 
-
 @keyframes clientsInfiniteScroll {
-
     from {
-        transform:
-            translateX(0);
+        transform: translateX(0);
     }
 
     to {
-        transform:
-            translateX(
-                var(--clients-distance)
-            );
+        transform: translateX(var(--clients-distance));
     }
 }
 
 
-/* =========================================================
-   TRAITS
-========================================================= */
+/* TRAITS */
 
 .traits {
     position: absolute;
-
     left: 50%;
     bottom: 8%;
-
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     width: 72%;
 
     display: grid;
-
-    grid-template-columns:
-        1fr
-        auto
-        1fr
-        auto
-        1fr;
-
+    grid-template-columns: 1fr auto 1fr auto 1fr;
     align-items: center;
 
-    column-gap:
-        clamp(25px, 3vw, 60px);
+    column-gap: clamp(25px, 3vw, 60px);
 }
 
 .trait {
@@ -809,7 +580,6 @@ img {
     min-width: 0;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -820,43 +590,28 @@ img {
     color: var(--white);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(17px, 1.65vw, 31px);
-
+    font-size: clamp(17px, 1.65vw, 31px);
     font-weight: 700;
-
     line-height: 1;
-
     letter-spacing: 0.22em;
 
     white-space: nowrap;
-
     text-align: center;
 }
 
-
-/*
-   A / C / T pozostają po prostu czarne.
-   NIE MA już żadnej animacji.
-*/
-
 .trait__black {
     color: var(--black);
-
     font-weight: 800;
 }
 
 .trait__line {
     position: absolute;
-
     display: block;
 
     width: 100%;
     height: 1px;
 
-    background:
-        rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .trait__line--bottom {
@@ -873,384 +628,17 @@ img {
     color: var(--white);
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(28px, 2vw, 38px);
-
+    font-size: clamp(28px, 2vw, 38px);
     font-weight: 700;
-
     line-height: 1;
 
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-        width: 100%;
-
-        margin-left: 0;
-
-        aspect-ratio: auto;
-
-        min-height: 720px;
-
-        background-size: cover;
-
-        background-position:
-            62% center;
-    }
-
-    .nav {
-        width: 70%;
-    }
-
-    .hero__content {
-        top: 24%;
-        left: 6%;
-
-        width: 84%;
-    }
-
-    .hero__title {
-        font-size:
-            clamp(90px, 14vw, 130px);
-    }
-
-    .hero__profession,
-    .hero__description {
-        white-space: normal;
-    }
-
-
-    .about {
-        width: 100%;
-
-        margin-left: 0;
-        margin-top: -4px;
-
-        aspect-ratio: auto;
-
-        min-height: 720px;
-
-        background-size: cover;
-
-        background-position: center;
-    }
-
-    .about__heading {
-        left: 6%;
-    }
-
-    .about__text {
-        right: 6%;
-
-        width: 53%;
-
-        font-size: 10px;
-    }
-
-    .about__industries {
-        right: 6%;
-
-        font-size: 12px;
-    }
-
-
-    .experience {
-        width: 100%;
-
-        margin-left: 0;
-        margin-top: -4px;
-
-        aspect-ratio: auto;
-
-        min-height: 580px;
-
-        background-size: cover;
-    }
-
-    .stats {
-        width: 78%;
-    }
-
-    .traits {
-        width: 78%;
-
-        column-gap: 20px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        width: 100%;
-
-        min-height: 700px;
-
-        margin-left: 0;
-
-        background-size: cover;
-
-        background-position:
-            63% center;
-    }
-
-    .nav {
-        top: 30px;
-        left: 22px;
-
-        transform: none;
-
-        width:
-            calc(100% - 44px);
-
-        justify-content: flex-start;
-
-        gap: 25px;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-    }
-
-    .nav--hidden {
-        transform:
-            translateY(-180%);
-
-        opacity: 0;
-    }
-
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav__link {
-        font-size: 9px;
-    }
-
-    .hero__content {
-        top: 125px;
-        left: 22px;
-
-        width:
-            calc(100% - 44px);
-    }
-
-    .hero__title {
-        font-size:
-            clamp(68px, 20vw, 100px);
-
-        white-space: nowrap;
-    }
-
-    .hero__info {
-        margin-top: 45px;
-    }
-
-    .hero__name {
-        font-size: 19px;
-    }
-
-    .hero__profession {
-        max-width: 340px;
-
-        font-size: 14px;
-
-        white-space: normal;
-    }
-
-    .hero__description {
-        max-width: 340px;
-
-        font-size: 9px;
-
-        white-space: normal;
-    }
-
-    .hero__logo {
-        left: 50%;
-        bottom: 10%;
-
-        width: 55px;
-    }
-
-
-    .about {
-        min-height: 760px;
-
-        background-position:
-            43% center;
-    }
-
-    .about__heading {
-        top: 8%;
-        left: 22px;
-    }
-
-    .about__heading h2 {
-        font-size: 20px;
-    }
-
-    .about__line {
-        width: 110px;
-
-        margin-top: 15px;
-    }
-
-    .about__text {
-        top: 28%;
-        left: 22px;
-        right: auto;
-
-        width:
-            calc(100% - 44px);
-
-        padding: 18px;
-
-        background:
-            rgba(255, 255, 255, 0.26);
-
-        backdrop-filter:
-            blur(3px);
-
-        font-size: 8px;
-
-        line-height: 1.5;
-
-        text-align: right;
-    }
-
-    .about__text p {
-        margin-bottom: 20px;
-    }
-
-    .about__industries {
-        right: 22px;
-        bottom: 5%;
-
-        width:
-            calc(100% - 44px);
-
-        flex-wrap: wrap;
-
-        gap:
-            8px 12px;
-
-        font-size: 9px;
-
-        line-height: 1.5;
-    }
-
-
-    .experience {
-        min-height: 760px;
-
-        background-size: cover;
-    }
-
-    .stats {
-        top: 7%;
-
-        width:
-            calc(100% - 44px);
-
-        height: auto;
-
-        padding:
-            30px 20px;
-
-        border-radius: 40px;
-
-        grid-template-columns: 1fr;
-
-        gap: 28px;
-    }
-
-    .stats__top-gap {
-        width: 20%;
-    }
-
-    .stat__number {
-        font-size: 35px;
-    }
-
-    .stat__label {
-        margin-top: 7px;
-
-        font-size: 11px;
-    }
-
-    .clients {
-        top: 55%;
-
-        width:
-            calc(100% - 44px);
-    }
-
-    .clients__track {
-        flex-wrap: nowrap;
-
-        justify-content:
-            flex-start;
-
-        gap: 25px;
-    }
-
-    .clients__track img {
-        width: auto;
-
-        max-width: 55px;
-
-        max-height: 38px;
-    }
-
-    .traits {
-        bottom: 4%;
-
-        width:
-            calc(100% - 44px);
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .trait__word {
-        font-size: 14px;
-    }
-
-    .trait__line {
-        width: 210px;
-    }
-
-    .trait__line--bottom {
-        margin-top: 10px;
-    }
-
-    .trait__line--top {
-        margin-bottom: 10px;
-    }
-
-    .traits__dot {
-        display: none;
-    }
-}
-
-
-/* =========================================================
-   FOOTER
+   GLOBAL FOOTER
+   UŻYWANY IDENTYCZNIE NA KAŻDEJ STRONIE
 ========================================================= */
 
 .footer {
@@ -1259,53 +647,36 @@ img {
     width: 100%;
     height: 140px;
 
-    background-image:
-        url("../assets/backgrounds/footer.svg");
-
+    background-image: url("../assets/backgrounds/footer.svg");
     background-repeat: no-repeat;
-
     background-size: 115% auto;
     background-position: center;
 
     color: var(--white);
-
     font-family: var(--font-main);
 
     overflow: hidden;
 }
 
-
-/* SOCIAL MEDIA
---------------------------------------------------------- */
-
 .footer__social {
     position: absolute;
-
     top: 30px;
     left: 6.6%;
 }
 
 .footer__social h3 {
-    margin:
-        0 0 18px;
+    margin: 0 0 18px;
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(13px, 1vw, 19px);
-
+    font-size: clamp(13px, 1vw, 19px);
     font-weight: 800;
-
     line-height: 1;
 }
 
 .footer__social-icons {
     display: flex;
-
     align-items: center;
-
-    gap:
-        clamp(25px, 2.3vw, 45px);
+    gap: clamp(25px, 2.3vw, 45px);
 }
 
 .footer__social-icons a {
@@ -1317,74 +688,50 @@ img {
 }
 
 .footer__social-icons img {
-    width:
-        clamp(30px, 2.3vw, 44px);
-
-    height:
-        clamp(30px, 2.3vw, 44px);
+    width: clamp(30px, 2.3vw, 44px);
+    height: clamp(30px, 2.3vw, 44px);
 
     object-fit: contain;
 }
 
 .footer__social-icons a:hover {
     transform: scale(1.15);
-
     opacity: 0.8;
 }
 
-
-/* FOOTER LOGO
---------------------------------------------------------- */
-
 .footer__logo {
     position: absolute;
-
     top: 50%;
     left: 50%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .footer__logo img {
-    width:
-        clamp(45px, 3.3vw, 64px);
-
+    width: clamp(45px, 3.3vw, 64px);
     height: auto;
 
     object-fit: contain;
 }
 
-
-/* FOOTER CONTACT
---------------------------------------------------------- */
-
 .footer__contact {
     position: absolute;
-
     top: 30px;
     right: 6.2%;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-end;
 
     text-align: right;
 }
 
 .footer__contact h3 {
-    margin:
-        0 0 18px;
+    margin: 0 0 18px;
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(13px, 1vw, 19px);
-
+    font-size: clamp(13px, 1vw, 19px);
     font-weight: 800;
-
     line-height: 1;
 }
 
@@ -1392,20 +739,14 @@ img {
     display: block;
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(11px, 0.9vw, 17px);
-
+    font-size: clamp(11px, 0.9vw, 17px);
     font-weight: 400;
-
     line-height: 1.55;
-
     letter-spacing: 0.20em;
 
     white-space: nowrap;
 
-    transition:
-        opacity 0.25s ease;
+    transition: opacity 0.25s ease;
 }
 
 .footer__contact a:hover {
@@ -1414,69 +755,7 @@ img {
 
 
 /* =========================================================
-   FOOTER — MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .footer {
-        height: 330px;
-    }
-
-    .footer__social {
-        top: 35px;
-        left: 50%;
-
-        transform:
-            translateX(-50%);
-
-        text-align: center;
-    }
-
-    .footer__social-icons {
-        justify-content: center;
-    }
-
-    .footer__logo {
-        top: 52%;
-    }
-
-    .footer__contact {
-        top: auto;
-        right: auto;
-        bottom: 35px;
-        left: 50%;
-
-        transform:
-            translateX(-50%);
-
-        align-items: center;
-
-        text-align: center;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    .clients__track {
-        animation: none;
-    }
-
-    .stat__number {
-        animation: none !important;
-    }
-}
-/* =========================================================
-   SERVICES — HERO
+   USŁUGI — HERO
 ========================================================= */
 
 .services-hero {
@@ -1493,138 +772,65 @@ img {
     overflow: hidden;
 }
 
-
-/* CONTENT
-========================================================= */
-
 .services-hero__content {
     position: absolute;
-    inset: 0;
+
+    top: 56%;
+    left: 11.5%;
+
+    width: 75%;
+
+    transform: translateY(-50%);
 
     z-index: 2;
 }
 
-.services-hero__title {
-    position: absolute;
-
-    top: 50%;
-    left: 11.5%;
-
-    transform: translateY(-50%);
-
-    margin: 0;
-
-    font-family: var(--font-display);
-    font-size: clamp(75px, 8vw, 150px);
-    font-weight: 400;
-
-    line-height: 0.9;
-    letter-spacing: 0;
-
-    color: #fff;
-    white-space: nowrap;
-}
-
 .services-hero__eyebrow {
-    position: absolute;
+    position: static;
 
-    left: 11.5%;
-    top: 31%;
-
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: clamp(23px, 1.75vw, 32px);
-    font-weight: 800;
-
-    line-height: 1;
-    letter-spacing: -0.025em;
-
-    color: #000;
-}
-
-.services-hero__description {
-    position: absolute;
-
-    left: 11.5%;
-    top: 65%;
-
-    margin: 0;
-
-    font-family: var(--font-main);
-    font-size: clamp(13px, 1vw, 19px);
-    font-weight: 400;
-
-    line-height: 1.48;
-    letter-spacing: 0.14em;
-
-    color: #fff;
-    white-space: nowrap;
-}
-
-
-/* JAK MOGĘ POMÓC?
-========================================================= */
-
-.services-hero__eyebrow {
     margin: 0 0 clamp(35px, 3.5vw, 65px);
 
     font-family: var(--font-main);
     font-size: clamp(23px, 1.75vw, 32px);
     font-weight: 800;
-
     line-height: 1;
     letter-spacing: -0.025em;
 
     color: #000;
 }
 
-
-/* USŁUGI
-========================================================= */
-
 .services-hero__title {
+    position: static;
+
     margin: 0;
 
     font-family: var(--font-display);
     font-size: clamp(75px, 8vw, 150px);
     font-weight: 400;
-
     line-height: 0.9;
     letter-spacing: 0;
 
     color: #fff;
+
     white-space: nowrap;
-
-    /*
-       Syncopate ma trochę pustej przestrzeni
-       przed pierwszym znakiem — tak samo jak
-       zauważyliśmy przy PORTFOLIO.
-    */
-
+    transform: none;
 }
 
-
-/* DESCRIPTION
-========================================================= */
-
 .services-hero__description {
+    position: static;
+
     margin: clamp(32px, 3vw, 55px) 0 0;
 
     font-family: var(--font-main);
     font-size: clamp(13px, 1vw, 19px);
     font-weight: 400;
-
     line-height: 1.48;
     letter-spacing: 0.14em;
 
     color: #fff;
+
     white-space: nowrap;
 }
-
-
-/* TOOLS / PROGRAMS
-========================================================= */
 
 .services-hero__tools {
     position: absolute;
@@ -1660,8 +866,14 @@ img {
     transform: scale(1.17);
 }
 
+.services-hero__tool[src*="app4.png"] {
+    position: relative;
+    top: 7px;
+}
+
+
 /* =========================================================
-   SERVICES — TYPEWRITER BACKGROUND
+   USŁUGI — TYPEWRITER
 ========================================================= */
 
 .services-typing-layer {
@@ -1674,7 +886,6 @@ img {
 
 .services-typing-word {
     position: absolute;
-
     margin: 0;
 
     color: rgba(255, 255, 255, 0.82);
@@ -1682,7 +893,6 @@ img {
     font-family: "Courier New", Courier, monospace;
     font-size: clamp(14px, 1.15vw, 22px);
     font-weight: 400;
-
     line-height: 1;
     letter-spacing: 0.08em;
 
@@ -1697,13 +907,9 @@ img {
     opacity: 1;
 }
 
-.services-hero__tool[src*="app4.png"] {
-    position: relative;
-    top: 7px;
-}
 
 /* =========================================================
-   SERVICES — SERVICE SECTIONS
+   USŁUGI — SERVICE SECTIONS
 ========================================================= */
 
 .service-section {
@@ -1725,9 +931,24 @@ img {
     background-image: url("../assets/backgrounds/uslugi2.svg");
 }
 
+.service-section--photo {
+    background-image: url("../assets/backgrounds/uslugi3.svg");
+}
 
-/* CONTENT
-========================================================= */
+.service-section--performance {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+.service-section--branding {
+    background-image: url("../assets/backgrounds/uslugi4.svg");
+    background-size: 127% auto;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+}
+
+.service-section--web {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
 
 .service-section__content {
     position: absolute;
@@ -1737,10 +958,6 @@ img {
 
     width: 72%;
 }
-
-
-/* NUMBER + TITLE
-========================================================= */
 
 .service-section__heading {
     display: flex;
@@ -1753,7 +970,6 @@ img {
     font-family: var(--font-main);
     font-size: clamp(15px, 1.25vw, 23px);
     font-weight: 400;
-
     line-height: 1;
 
     color: #000;
@@ -1765,15 +981,10 @@ img {
     font-family: var(--font-main);
     font-size: clamp(17px, 1.45vw, 27px);
     font-weight: 800;
-
     line-height: 1;
 
     color: #000;
 }
-
-
-/* SUBTITLE
-========================================================= */
 
 .service-section__subtitle {
     margin: clamp(32px, 2.8vw, 52px) 0 0;
@@ -1781,7 +992,6 @@ img {
     font-family: var(--font-main);
     font-size: clamp(16px, 1.55vw, 29px);
     font-weight: 400;
-
     line-height: 1.2;
     letter-spacing: 0.20em;
 
@@ -1790,25 +1000,16 @@ img {
     white-space: nowrap;
 }
 
-
-/* DESCRIPTION
-========================================================= */
-
 .service-section__description {
     margin: clamp(28px, 2.5vw, 46px) 0 0;
 
     font-family: var(--font-main);
     font-size: clamp(14px, 1.2vw, 22px);
     font-weight: 400;
-
     line-height: 1.4;
 
     color: #000;
 }
-
-
-/* TAGS
-========================================================= */
 
 .service-section__tags {
     margin-top: clamp(30px, 3vw, 55px);
@@ -1827,7 +1028,6 @@ img {
     justify-content: center;
 
     min-height: clamp(44px, 3.8vw, 70px);
-
     padding: 0 20px;
 
     border: 2px solid rgba(255, 255, 255, 0.9);
@@ -1836,7 +1036,6 @@ img {
     font-family: var(--font-main);
     font-size: clamp(12px, 1.15vw, 21px);
     font-weight: 400;
-
     line-height: 1;
     letter-spacing: 0.18em;
 
@@ -1859,18 +1058,6 @@ img {
     color: #000;
 }
 
-/* =========================================================
-   SERVICE 02 — FOTO & VIDEO
-========================================================= */
-
-.service-section--photo {
-    background-image: url("../assets/backgrounds/uslugi3.svg");
-}
-
-
-/* PHOTO TAG LAYOUT
-========================================================= */
-
 .service-section__tags--photo {
     width: 84%;
 
@@ -1881,10 +1068,6 @@ img {
         1fr;
 }
 
-
-/* PRYWATNE STUDIO
-========================================================= */
-
 .service-section__tags .service-section__tag--dark {
     border-color: #000;
     color: #000;
@@ -1894,18 +1077,6 @@ img {
     background-color: #000;
     color: #fff;
 }
-
-/* =========================================================
-   SERVICE 03 — PERFORMANCE
-========================================================= */
-
-.service-section--performance {
-    background-image: url("../assets/backgrounds/uslugi2.svg");
-}
-
-
-/* TAG LAYOUT
-========================================================= */
 
 .service-section__tags--performance {
     width: 88%;
@@ -1920,22 +1091,6 @@ img {
     grid-column: auto;
 }
 
-/* =========================================================
-   SERVICE 04 — STRATEGIA & BRANDING
-========================================================= */
-
-.service-section--branding {
-    background-image: url("../assets/backgrounds/uslugi4.svg");
-
-    background-size: 127% auto;
-    background-position: 100% center;
-    background-repeat: no-repeat;
-}
-
-
-/* TAG LAYOUT
-========================================================= */
-
 .service-section__tags--branding {
     width: 88%;
 
@@ -1949,18 +1104,6 @@ img {
     grid-column: 1 / 3;
 }
 
-/* =========================================================
-   SERVICE 05 — STRONY WWW
-========================================================= */
-
-.service-section--web {
-    background-image: url("../assets/backgrounds/uslugi2.svg");
-}
-
-
-/* TAG LAYOUT
-========================================================= */
-
 .service-section__tags--web {
     width: 88%;
 
@@ -1970,51 +1113,6 @@ img {
         1.4fr;
 }
 
-/* =========================================================
-   SERVICES HERO — FINAL POSITION
-========================================================= */
-
-.services-hero__content {
-    position: absolute;
-
-    top: 56%;
-    left: 11.5%;
-
-    width: 75%;
-
-    transform: translateY(-50%);
-
-    z-index: 2;
-}
-
-
-/* JAK MOGĘ POMÓC? */
-
-.services-hero__eyebrow {
-    position: static;
-
-    margin: 0 0 clamp(35px, 3.5vw, 65px);
-}
-
-
-/* USŁUGI */
-
-.services-hero__title {
-    position: static;
-
-    margin: 0;
-
-    transform: none;
-}
-
-
-/* OPIS */
-
-.services-hero__description {
-    position: static;
-
-    margin: clamp(32px, 3vw, 55px) 0 0;
-}
 
 /* =========================================================
    PORTFOLIO — HERO
@@ -2026,20 +1124,13 @@ img {
     width: 100%;
     min-height: 100vh;
 
-    background-image:
-        url("../assets/backgrounds/portfolio.svg");
-
+    background-image: url("../assets/backgrounds/portfolio.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
     overflow: hidden;
 }
-
-
-/* =========================================================
-   PORTFOLIO — MAIN CONTENT
-========================================================= */
 
 .portfolio-hero__content {
     position: absolute;
@@ -2056,31 +1147,17 @@ img {
     z-index: 2;
 }
 
-
-/* MOJE REALIZACJE
-========================================================= */
-
 .portfolio-hero__eyebrow {
-    margin:
-        0
-        2%
-        clamp(35px, 3.5vw, 65px)
-        0;
+    margin: 0 2% clamp(35px, 3.5vw, 65px) 0;
 
     font-family: var(--font-main);
     font-size: clamp(23px, 1.75vw, 32px);
     font-weight: 800;
-
     line-height: 1;
-
     letter-spacing: -0.025em;
 
     color: #000;
 }
-
-
-/* PORTFOLIO
-========================================================= */
 
 .portfolio-hero__title {
     margin: 0;
@@ -2088,47 +1165,34 @@ img {
     font-family: var(--font-display);
     font-size: clamp(75px, 8vw, 150px);
     font-weight: 400;
-
     line-height: 0.9;
     letter-spacing: 0;
 
     color: #fff;
+
     white-space: nowrap;
 
     transform: translateX(-7%);
 }
 
-
-/* DESCRIPTION
-========================================================= */
-
 .portfolio-hero__description {
-    margin:
-        clamp(32px, 3vw, 55px)
-        0
-        0;
+    margin: clamp(32px, 3vw, 55px) 0 0;
 
     font-family: var(--font-main);
-
-    font-size:
-        clamp(13px, 1vw, 19px);
-
+    font-size: clamp(13px, 1vw, 19px);
     font-weight: 400;
-
     line-height: 1.48;
-
     letter-spacing: 0.14em;
 
     color: #fff;
 
     white-space: nowrap;
-
     text-align: right;
 }
 
 
 /* =========================================================
-   PORTFOLIO — LEFT CATEGORY PATH
+   PORTFOLIO — CATEGORIES
 ========================================================= */
 
 .portfolio-hero__categories {
@@ -2143,20 +1207,14 @@ img {
     z-index: 3;
 }
 
-
-/* WHITE PATH
-========================================================= */
-
 .portfolio-hero__line {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
     height: 100%;
 
     overflow: visible;
-
     pointer-events: none;
 }
 
@@ -2173,10 +1231,6 @@ img {
     fill: #fff;
 }
 
-
-/* CATEGORY LABELS
-========================================================= */
-
 .portfolio-hero__category {
     position: absolute;
 
@@ -2185,11 +1239,11 @@ img {
     font-family: var(--font-main);
     font-size: clamp(14px, 1.15vw, 21px);
     font-weight: 700;
-
     line-height: 1;
     letter-spacing: 0.10em;
 
     color: #fff;
+
     white-space: nowrap;
 
     transform: translateY(-50%);
@@ -2203,9 +1257,6 @@ img {
     transform: translateY(-50%) scale(1.08);
     opacity: 0.8;
 }
-
-
-/* FOTOGRAFIA */
 
 .portfolio-hero__category--photo {
     top: 12%;
@@ -2222,9 +1273,10 @@ img {
     left: 38%;
 }
 
-/* ==========================================================
-   OPINIE
-========================================================== */
+
+/* =========================================================
+   OPINIE — PAGE
+========================================================= */
 
 .opinions-page {
     margin: 0;
@@ -2232,53 +1284,45 @@ img {
 }
 
 
-/* ==========================================================
-   OPINIONS — MAIN SECTION
-========================================================== */
+/* =========================================================
+   OPINIE — TWO FULL SCREENS
+========================================================= */
 
 .opinions {
     position: relative;
 
     width: 100%;
+    height: 200vh;
+    min-height: 0;
 
-    /*
-       WAŻNE:
-       wysokość pierwszego ekranu jest teraz liczona dokładnie
-       tak samo jak w .services-hero
-    */
-    min-height: 100vh;
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
 
     overflow: hidden;
-
-    background-image:
-        url("../assets/backgrounds/uslugi2.svg"),
-        url("../assets/backgrounds/uslugi2.svg");
-
-    background-repeat:
-        repeat-y,
-        repeat-y;
-
-    background-size:
-        100% auto,
-        100% auto;
-
-    background-position:
-        center top,
-        center bottom;
 }
 
 
-/* ==========================================================
-   OPINIE — HERO CONTENT
+/* =========================================================
+   OPINIE — SCREEN 1 / HERO
+========================================================= */
 
-   Korzysta BEZPOŚREDNIO z:
-   .services-hero__content
-   .services-hero__eyebrow
-   .services-hero__title
-   .services-hero__description
+.opinions__hero {
+    position: relative;
 
-   Dzięki temu geometria jest identyczna jak USŁUGI.
-========================================================== */
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
+
+.opinions__background {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
 
 .opinions__intro {
     position: absolute;
@@ -2289,25 +1333,14 @@ img {
     pointer-events: none;
 }
 
-
 /*
-   USŁUGI ma:
-
-   top: 56%;
-   left: 11.5%;
-   width: 75%;
-   transform: translateY(-50%);
-
-   Nie powtarzamy tego tutaj.
-   Bierze to bezpośrednio z .services-hero__content.
+   .opinions__content korzysta z dokładnie tej samej
+   geometrii co .services-hero__content.
 */
 
 .opinions__content {
     z-index: 5;
 }
-
-
-/* OPIS — zachowujemy układ tekstu OPINII */
 
 .opinions__description p {
     margin: 0;
@@ -2318,9 +1351,11 @@ img {
 }
 
 
-/* ==========================================================
-   JULIA
-========================================================== */
+/* =========================================================
+   OPINIE — JULIA
+   Pozycjonowana względem całych 200vh.
+   Dzięki temu może później przejść przez oba ekrany.
+========================================================= */
 
 .opinions__julia {
     position: absolute;
@@ -2329,48 +1364,56 @@ img {
     right: 6.5%;
 
     width: 48%;
-    height: 76%;
+    height: 76vh;
 
-    z-index: 4;
+    z-index: 20;
 
     pointer-events: none;
 }
 
-
 .opinions__julia-image {
     position: absolute;
 
-    right: 0;
     top: 0;
+    right: 0;
 
     width: 100%;
     height: 100%;
 
     object-fit: contain;
     object-position: center top;
-
-    display: block;
 }
 
 
-/* ==========================================================
-   REVIEWS AREA
-========================================================== */
+/* =========================================================
+   OPINIE — SCREEN 2 / REVIEWS
+========================================================= */
+
+.opinions__reviews-section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 2;
+}
 
 .opinions__reviews {
     position: absolute;
 
-    left: 3.8%;
-    right: 3.8%;
-    bottom: 7.5%;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+
+    transform: translateY(-50%);
 
     z-index: 10;
 }
 
 
-/* ==========================================================
-   CAROUSEL
-========================================================== */
+/* =========================================================
+   OPINIE — CAROUSEL
+========================================================= */
 
 .opinions .reviews-carousel {
     position: relative;
@@ -2381,196 +1424,185 @@ img {
     align-items: center;
 }
 
-
 .opinions .reviews-viewport {
     width: 100%;
 
     overflow: hidden;
 
-    padding: 28px 0 20px;
+    padding: 45px 0 60px;
 }
-
 
 .opinions .reviews-track {
     display: flex;
-    align-items: stretch;
-
-    gap: 22px;
+    align-items: center;
 
     width: 100%;
+    gap: 22px;
 
     transition:
-        transform 0.65s
-        cubic-bezier(0.22, 1, 0.36, 1);
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 
     will-change: transform;
 }
 
 
-/* ==========================================================
-   REVIEW CARD
-========================================================== */
+/* =========================================================
+   OPINIE — REVIEW ITEM
+   To ITEM zajmuje 1/3 tracka.
+========================================================= */
+
+.opinions .review-item {
+    position: relative;
+
+    flex: 0 0 calc((100% - 44px) / 3);
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.55s ease;
+
+    transform: scale(0.90);
+    transform-origin: center;
+
+    opacity: 0.82;
+}
+
+.opinions .review-item.is-active {
+    transform: scale(1);
+    opacity: 1;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   OPINIE — REVIEW CARD
+========================================================= */
 
 .opinions .review-card {
     position: relative;
 
-    flex:
-        0 0
-        calc((100% - 44px) / 3);
-
-    min-width: 0;
-
-    height: 220px;
+    width: 100%;
+    height: 250px;
 
     padding: 35px 38px;
 
     display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background:
-        rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.88);
 
     text-align: center;
-
-    opacity: 1;
-
-    transform: none;
 
     box-shadow: none;
 
     transition:
-        transform 0.55s
-        cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.55s ease,
+        height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.55s ease;
 }
 
+/*
+   ŚRODKOWA OPINIA JEST WIĘKSZA.
+*/
 
-/* AKTYWNA KARTA */
-
-.opinions .review-card.is-active {
-    opacity: 1;
-
-    transform: scale(1.025);
+.opinions .review-item.is-active .review-card {
+    height: 290px;
 
     box-shadow:
         0 16px 38px
         rgba(0, 0, 0, 0.06);
-
-    z-index: 2;
 }
 
 
-/* ==========================================================
-   REVIEW TEXT
-========================================================== */
+/* =========================================================
+   OPINIE — REVIEW TEXT
+========================================================= */
 
 .opinions .review-text {
     width: 100%;
-
     max-width: none;
 
     margin: 0;
 
-    font-family:
-        "Manrope",
-        sans-serif;
-
+    font-family: var(--font-main);
     font-size: 11px;
-
     font-weight: 400;
-
     line-height: 1.45;
 
     color: #777777;
 
     text-align: center;
+
+    white-space: pre-line;
 }
-
-
-/* JEŻELI STARE GWIAZDKI NADAL GDZIEŚ WYSTĘPUJĄ */
 
 .opinions .review-stars {
     display: none;
 }
 
 
-/* ==========================================================
-   REVIEW AUTHOR
-========================================================== */
+/* =========================================================
+   OPINIE — AUTHOR
+========================================================= */
 
 .opinions .review-author {
-    position: absolute;
+    position: static;
 
-    left: 0;
-    right: 0;
+    margin: 28px 0 0;
 
-    bottom: -42px;
-
-    margin: 0;
-
-    font-family:
-        "Manrope",
-        sans-serif;
-
+    font-family: var(--font-main);
     font-size: 12px;
-
     font-weight: 400;
-
+    line-height: 1;
     letter-spacing: 0.18em;
 
     color: #555555;
 
     text-align: center;
-
     white-space: nowrap;
 }
 
+.opinions .review-author__name {
+    font-weight: 400;
+}
 
+.opinions .review-author__company,
 .opinions .review-author strong {
     font-weight: 700;
 }
 
 
-/* ==========================================================
-   CAROUSEL ARROWS
-========================================================== */
+/* =========================================================
+   OPINIE — ARROWS
+========================================================= */
 
 .opinions .reviews-arrow {
     position: absolute;
 
     top: 50%;
 
-    transform:
-        translateY(-50%);
-
     width: 42px;
     height: 42px;
-
     padding: 0;
 
     border: 0;
-
     background: transparent;
 
-    color:
-        rgba(70, 70, 70, 0.65);
+    color: rgba(70, 70, 70, 0.65);
 
-    font-family:
-        Arial,
-        sans-serif;
-
+    font-family: Arial, sans-serif;
     font-size: 46px;
-
     font-weight: 200;
-
     line-height: 1;
 
     cursor: pointer;
+
+    transform: translateY(-50%);
 
     z-index: 20;
 
@@ -2578,7 +1610,6 @@ img {
         opacity 0.25s ease,
         transform 0.25s ease;
 }
-
 
 .opinions .reviews-arrow:hover {
     opacity: 0.55;
@@ -2588,31 +1619,27 @@ img {
         scale(1.08);
 }
 
-
 .opinions .reviews-arrow-prev {
     left: -48px;
 }
-
 
 .opinions .reviews-arrow-next {
     right: -48px;
 }
 
 
-/* ==========================================================
-   DOTS
-========================================================== */
+/* =========================================================
+   OPINIE — DOTS
+========================================================= */
 
 .opinions .reviews-dots {
-    margin-top: 52px;
+    margin-top: 30px;
 
     display: flex;
-
     justify-content: center;
 
     gap: 9px;
 }
-
 
 .opinions .reviews-dot {
     width: 6px;
@@ -2621,127 +1648,455 @@ img {
     padding: 0;
 
     border: 0;
-
     border-radius: 50%;
 
-    background:
-        rgba(80, 80, 80, 0.3);
+    background: rgba(80, 80, 80, 0.3);
 
     cursor: pointer;
 }
 
-
 .opinions .reviews-dot.is-active {
-    background:
-        rgba(50, 50, 50, 0.8);
+    background: rgba(50, 50, 50, 0.8);
 
     transform: scale(1.3);
 }
 
 
+/* =========================================================
+   TABLET — GLOBAL / O MNIE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        width: 100%;
+        margin-left: 0;
+
+        aspect-ratio: auto;
+        min-height: 720px;
+
+        background-size: cover;
+        background-position: 62% center;
+    }
+
+    .nav {
+        width: 70%;
+    }
+
+    .hero__content {
+        top: 24%;
+        left: 6%;
+
+        width: 84%;
+    }
+
+    .hero__title {
+        font-size: clamp(90px, 14vw, 130px);
+    }
+
+    .hero__profession,
+    .hero__description {
+        white-space: normal;
+    }
+
+    .about {
+        width: 100%;
+
+        margin-left: 0;
+        margin-top: -4px;
+
+        aspect-ratio: auto;
+        min-height: 720px;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .about__heading {
+        left: 6%;
+    }
+
+    .about__text {
+        right: 6%;
+
+        width: 53%;
+
+        font-size: 10px;
+    }
+
+    .about__industries {
+        right: 6%;
+
+        font-size: 12px;
+    }
+
+    .experience {
+        width: 100%;
+
+        margin-left: 0;
+        margin-top: -4px;
+
+        aspect-ratio: auto;
+        min-height: 580px;
+
+        background-size: cover;
+    }
+
+    .stats {
+        width: 78%;
+    }
+
+    .traits {
+        width: 78%;
+
+        column-gap: 20px;
+    }
+}
 
 
-/* ==========================================================
-   TABLET
-========================================================== */
+/* =========================================================
+   OPINIE — TABLET
+========================================================= */
 
 @media (max-width: 1024px) {
-
-    /*
-       CELOWO NIE MA TUTAJ:
-       .opinions__intro { top: 17%; }
-
-       Intro zachowuje dokładnie desktopowe
-       top: 56%, tak jak SERVICES.
-    */
-
 
     .opinions__julia {
         right: 2%;
 
         width: 54%;
-        height: 72%;
+        height: 72vh;
     }
-
 
     .opinions__reviews {
         left: 4%;
         right: 4%;
     }
 
-
-    .opinions .review-card {
-        flex:
-            0 0
-            calc((100% - 20px) / 2);
-
-        height: 215px;
+    .opinions .review-item {
+        flex: 0 0 calc((100% - 20px) / 2);
     }
-
 
     .opinions .reviews-arrow {
         display: none;
     }
-
 }
 
 
-/* ==========================================================
-   MOBILE
-========================================================== */
+/* =========================================================
+   MOBILE — GLOBAL / O MNIE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        width: 100%;
+        min-height: 700px;
+        margin-left: 0;
+
+        background-size: cover;
+        background-position: 63% center;
+    }
+
+    .nav {
+        top: 30px;
+        left: 22px;
+
+        transform: none;
+
+        width: calc(100% - 44px);
+
+        justify-content: flex-start;
+
+        gap: 25px;
+
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav--hidden {
+        transform: translateY(-180%);
+        opacity: 0;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav__link {
+        font-size: 9px;
+    }
+
+    .hero__content {
+        top: 125px;
+        left: 22px;
+
+        width: calc(100% - 44px);
+    }
+
+    .hero__title {
+        font-size: clamp(68px, 20vw, 100px);
+        white-space: nowrap;
+    }
+
+    .hero__info {
+        margin-top: 45px;
+    }
+
+    .hero__name {
+        font-size: 19px;
+    }
+
+    .hero__profession {
+        max-width: 340px;
+
+        font-size: 14px;
+
+        white-space: normal;
+    }
+
+    .hero__description {
+        max-width: 340px;
+
+        font-size: 9px;
+
+        white-space: normal;
+    }
+
+    .hero__logo {
+        left: 50%;
+        bottom: 10%;
+
+        width: 55px;
+    }
+
+    .about {
+        min-height: 760px;
+
+        background-position: 43% center;
+    }
+
+    .about__heading {
+        top: 8%;
+        left: 22px;
+    }
+
+    .about__heading h2 {
+        font-size: 20px;
+    }
+
+    .about__line {
+        width: 110px;
+
+        margin-top: 15px;
+    }
+
+    .about__text {
+        top: 28%;
+        left: 22px;
+        right: auto;
+
+        width: calc(100% - 44px);
+        padding: 18px;
+
+        background: rgba(255, 255, 255, 0.26);
+
+        backdrop-filter: blur(3px);
+
+        font-size: 8px;
+        line-height: 1.5;
+
+        text-align: right;
+    }
+
+    .about__text p {
+        margin-bottom: 20px;
+    }
+
+    .about__industries {
+        right: 22px;
+        bottom: 5%;
+
+        width: calc(100% - 44px);
+
+        flex-wrap: wrap;
+
+        gap: 8px 12px;
+
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .experience {
+        min-height: 760px;
+
+        background-size: cover;
+    }
+
+    .stats {
+        top: 7%;
+
+        width: calc(100% - 44px);
+        height: auto;
+
+        padding: 30px 20px;
+
+        border-radius: 40px;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .stats__top-gap {
+        width: 20%;
+    }
+
+    .stat__number {
+        font-size: 35px;
+    }
+
+    .stat__label {
+        margin-top: 7px;
+
+        font-size: 11px;
+    }
+
+    .clients {
+        top: 55%;
+
+        width: calc(100% - 44px);
+    }
+
+    .clients__track {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        gap: 25px;
+    }
+
+    .clients__track img {
+        width: auto;
+
+        max-width: 55px;
+        max-height: 38px;
+    }
+
+    .traits {
+        bottom: 4%;
+
+        width: calc(100% - 44px);
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .trait__word {
+        font-size: 14px;
+    }
+
+    .trait__line {
+        width: 210px;
+    }
+
+    .trait__line--bottom {
+        margin-top: 10px;
+    }
+
+    .trait__line--top {
+        margin-bottom: 10px;
+    }
+
+    .traits__dot {
+        display: none;
+    }
+
+
+    /* GLOBAL FOOTER — MOBILE */
+
+    .footer {
+        height: 330px;
+    }
+
+    .footer__social {
+        top: 35px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        text-align: center;
+    }
+
+    .footer__social-icons {
+        justify-content: center;
+    }
+
+    .footer__logo {
+        top: 52%;
+    }
+
+    .footer__contact {
+        top: auto;
+        right: auto;
+        bottom: 35px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        align-items: center;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   OPINIE — MOBILE
+========================================================= */
 
 @media (max-width: 767px) {
 
     .opinions {
-        min-height: 1100px;
+        height: 200vh;
 
-        background-size:
-            auto 55%;
+        background-size: auto 55%;
     }
 
-
-    /*
-       Na telefonie zostawiamy osobny układ,
-       który był już wcześniej.
-    */
-
     .opinions__intro {
-        left: 24px;
-        right: 24px;
+        inset: 0;
+    }
 
+    .opinions__content {
         top: 110px;
+        left: 24px;
 
-        width: auto;
+        width: calc(100% - 48px);
 
         transform: none;
     }
 
-
-    .opinions__eyebrow {
+    .opinions__content .services-hero__eyebrow {
         font-size: 13px;
 
         white-space: normal;
     }
 
-
-    .opinions__title {
+    .opinions__content .services-hero__title {
         font-size: 58px;
     }
-
 
     .opinions__description {
         margin-top: 28px;
 
         font-size: 9px;
-
         line-height: 1.6;
-    }
 
+        white-space: normal;
+    }
 
     .opinions__description br {
         display: none;
     }
-
 
     .opinions__julia {
         top: 310px;
@@ -2751,125 +2106,68 @@ img {
         height: 500px;
     }
 
-
     .opinions__reviews {
         left: 24px;
         right: 24px;
-
-        bottom: 90px;
     }
-
 
     .opinions .reviews-viewport {
-        padding: 20px 0;
+        padding: 30px 0 50px;
     }
-
 
     .opinions .reviews-track {
         gap: 18px;
     }
 
-
-    .opinions .review-card {
+    .opinions .review-item {
         flex: 0 0 100%;
 
+        transform: none;
+        opacity: 1;
+    }
+
+    .opinions .review-card,
+    .opinions .review-item.is-active .review-card {
         height: 220px;
 
         padding: 30px 26px;
     }
 
-
     .opinions .review-text {
         font-size: 10px;
     }
 
-
     .opinions .review-author {
-        bottom: -35px;
+        margin-top: 22px;
 
         font-size: 10px;
     }
-
 
     .opinions .reviews-arrow {
         display: none;
     }
 
-
     .opinions .reviews-dots {
-        margin-top: 45px;
+        margin-top: 20px;
     }
-
-
-    .opinions-page .footer {
-        min-height: 170px;
-
-        padding: 24px;
-
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-
-    .opinions-page .footer__social,
-    .opinions-page .footer__logo,
-    .opinions-page .footer__contact {
-        justify-self: center;
-    }
-
-
-    .opinions-page .footer__contact {
-        align-items: center;
-
-        text-align: center;
-    }
-
 }
+
 
 /* =========================================================
-   OPINIE — TWO FULL SCREENS
+   ACCESSIBILITY
 ========================================================= */
 
-.opinions {
-    position: relative;
-    width: 100%;
-    height: 200vh;
-    min-height: 0;
-    overflow: hidden;
-}
+@media (prefers-reduced-motion: reduce) {
 
-/* EKRAN 1 */
-.opinions__hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
+    html {
+        scroll-behavior: auto;
+    }
 
-/* zachowuje dokładnie obecne ustawienie tekstu */
-.opinions__intro {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    pointer-events: none;
-}
+    .clients__track {
+        animation: none;
+    }
 
-/* EKRAN 2 */
-.opinions__reviews-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-/* opinie należą wyłącznie do drugiego ekranu */
-.opinions__reviews {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    right: 5%;
-    bottom: auto;
-
-    transform: translateY(-50%);
-
-    z-index: 10;
+    .stat__number {
+        animation: none !important;
+    }
 }
