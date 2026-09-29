@@ -1391,17 +1391,17 @@ img {
 
 .opinions__reviews-section {
     position: relative;
-
     width: 100%;
     height: 100vh;
-
     z-index: 2;
 }
 
 .opinions__reviews {
     position: absolute;
 
-    top: 50%;
+    /* cały rząd opinii niżej */
+    top: 62%;
+
     left: 5%;
     right: 5%;
 
@@ -1427,9 +1427,14 @@ img {
 .opinions .reviews-viewport {
     width: 100%;
 
+    /*
+       Musimy zostawić miejsce na:
+       - powiększenie środkowej karty
+       - podpis pod kartą
+    */
     overflow: hidden;
 
-    padding: 45px 0 60px;
+    padding: 55px 0 70px;
 }
 
 .opinions .reviews-track {
@@ -1437,7 +1442,8 @@ img {
     align-items: center;
 
     width: 100%;
-    gap: 22px;
+
+    gap: 28px;
 
     transition:
         transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1448,34 +1454,47 @@ img {
 
 /* =========================================================
    OPINIE — REVIEW ITEM
-   To ITEM zajmuje 1/3 tracka.
 ========================================================= */
 
 .opinions .review-item {
     position: relative;
 
-    flex: 0 0 calc((100% - 44px) / 3);
+    /*
+       Zawsze dokładnie 3 opinie w rzędzie.
+    */
+    flex: 0 0 calc((100% - 56px) / 3);
+
     min-width: 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    transition:
-        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.55s ease;
+    /*
+       Wszystkie mają IDENTYCZNY bazowy rozmiar.
+       Boczne są po prostu lekko pomniejszone.
+    */
+    transform: scale(0.92);
+    transform-origin: center center;
 
-    transform: scale(0.90);
-    transform-origin: center;
-
-    opacity: 0.82;
-}
-
-.opinions .review-item.is-active {
-    transform: scale(1);
     opacity: 1;
 
-    z-index: 3;
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/*
+   ŚRODKOWA / AKTYWNA OPINIA
+
+   Nie zmieniamy jej width ani height.
+   Powiększamy cały element proporcjonalnie.
+*/
+
+.opinions .review-item.is-active {
+    transform: scale(1.06);
+
+    z-index: 5;
 }
 
 
@@ -1487,9 +1506,9 @@ img {
     position: relative;
 
     width: 100%;
-    height: 250px;
+    height: 280px;
 
-    padding: 35px 38px;
+    padding: 38px 42px;
 
     display: flex;
     align-items: center;
@@ -1502,16 +1521,17 @@ img {
     box-shadow: none;
 
     transition:
-        height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.55s ease;
 }
 
+
 /*
-   ŚRODKOWA OPINIA JEST WIĘKSZA.
+   Środkowy kafelek NIE dostaje innej wysokości.
+   Jego większy rozmiar wynika wyłącznie ze scale().
 */
 
 .opinions .review-item.is-active .review-card {
-    height: 290px;
+    height: 280px;
 
     box-shadow:
         0 16px 38px
@@ -1530,9 +1550,11 @@ img {
     margin: 0;
 
     font-family: var(--font-main);
+
     font-size: 11px;
     font-weight: 400;
-    line-height: 1.45;
+
+    line-height: 1.5;
 
     color: #777777;
 
@@ -1551,27 +1573,50 @@ img {
 ========================================================= */
 
 .opinions .review-author {
-    position: static;
+    position: relative;
 
-    margin: 28px 0 0;
+    width: 100%;
+
+    margin: 30px 0 0;
 
     font-family: var(--font-main);
+
     font-size: 12px;
     font-weight: 400;
+
     line-height: 1;
-    letter-spacing: 0.18em;
+
+    letter-spacing: 0.20em;
 
     color: #555555;
 
     text-align: center;
+
     white-space: nowrap;
 }
+
+
+/*
+   IMIĘ — normalne
+*/
 
 .opinions .review-author__name {
     font-weight: 400;
 }
 
-.opinions .review-author__company,
+
+/*
+   FIRMA — pogrubiona,
+   tak jak na podesłanym wcześniej wzorze.
+*/
+
+.opinions .review-author__company {
+    font-weight: 700;
+}
+
+
+/* zabezpieczenie, jeżeli JS używa <strong> */
+
 .opinions .review-author strong {
     font-weight: 700;
 }
@@ -1588,16 +1633,20 @@ img {
 
     width: 42px;
     height: 42px;
+
     padding: 0;
 
     border: 0;
+
     background: transparent;
 
     color: rgba(70, 70, 70, 0.65);
 
     font-family: Arial, sans-serif;
+
     font-size: 46px;
     font-weight: 200;
+
     line-height: 1;
 
     cursor: pointer;
@@ -1633,9 +1682,10 @@ img {
 ========================================================= */
 
 .opinions .reviews-dots {
-    margin-top: 30px;
+    margin-top: 20px;
 
     display: flex;
+
     justify-content: center;
 
     gap: 9px;
@@ -1659,126 +1709,6 @@ img {
     background: rgba(50, 50, 50, 0.8);
 
     transform: scale(1.3);
-}
-
-
-/* =========================================================
-   TABLET — GLOBAL / O MNIE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-        width: 100%;
-        margin-left: 0;
-
-        aspect-ratio: auto;
-        min-height: 720px;
-
-        background-size: cover;
-        background-position: 62% center;
-    }
-
-    .nav {
-        width: 70%;
-    }
-
-    .hero__content {
-        top: 24%;
-        left: 6%;
-
-        width: 84%;
-    }
-
-    .hero__title {
-        font-size: clamp(90px, 14vw, 130px);
-    }
-
-    .hero__profession,
-    .hero__description {
-        white-space: normal;
-    }
-
-    .about {
-        width: 100%;
-
-        margin-left: 0;
-        margin-top: -4px;
-
-        aspect-ratio: auto;
-        min-height: 720px;
-
-        background-size: cover;
-        background-position: center;
-    }
-
-    .about__heading {
-        left: 6%;
-    }
-
-    .about__text {
-        right: 6%;
-
-        width: 53%;
-
-        font-size: 10px;
-    }
-
-    .about__industries {
-        right: 6%;
-
-        font-size: 12px;
-    }
-
-    .experience {
-        width: 100%;
-
-        margin-left: 0;
-        margin-top: -4px;
-
-        aspect-ratio: auto;
-        min-height: 580px;
-
-        background-size: cover;
-    }
-
-    .stats {
-        width: 78%;
-    }
-
-    .traits {
-        width: 78%;
-
-        column-gap: 20px;
-    }
-}
-
-
-/* =========================================================
-   OPINIE — TABLET
-========================================================= */
-
-@media (max-width: 1024px) {
-
-    .opinions__julia {
-        right: 2%;
-
-        width: 54%;
-        height: 72vh;
-    }
-
-    .opinions__reviews {
-        left: 4%;
-        right: 4%;
-    }
-
-    .opinions .review-item {
-        flex: 0 0 calc((100% - 20px) / 2);
-    }
-
-    .opinions .reviews-arrow {
-        display: none;
-    }
 }
 
 
