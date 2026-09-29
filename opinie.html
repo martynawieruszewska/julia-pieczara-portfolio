@@ -54,58 +54,69 @@
 
         <!-- ==================================================
              OPINIONS
+             2 PEŁNE EKRANY: HERO + REVIEWS
         =================================================== -->
 
         <section class="opinions">
 
 
-            <!-- =============================================
-                 BACKGROUND
-            ============================================== -->
+            <!-- ==================================================
+                 EKRAN 1 — HERO
+            =================================================== -->
 
-            <div
-                class="opinions__background"
-                aria-hidden="true"
-            ></div>
+            <div class="opinions__hero">
 
 
-            <!-- =============================================
-                 INTRO / HEADING
-            ============================================== -->
+                <!-- BACKGROUND -->
 
-            <div class="opinions__intro">
+                <div
+                    class="opinions__background"
+                    aria-hidden="true"
+                ></div>
 
-                <div class="services-hero__content opinions__content">
-            
-                    <p class="services-hero__eyebrow">
-                        O LUDZIACH, DZIĘKI KTÓRYM TU JESTEM
-                    </p>
-            
-                    <h1 class="services-hero__title">
-                        OPINIE
-                    </h1>
-            
-                    <div class="services-hero__description opinions__description">
-            
-                        <p>
-                            KAŻDY PROJEKT TO DLA MNIE NIE TYLKO WSPÓŁPRACA,<br>
-                            ALE TEŻ RELACJA, ZAUFANIE I WSPÓLNIE TWORZONA HISTORIA
+
+                <!-- INTRO / HEADING -->
+
+                <div class="opinions__intro">
+
+                    <div class="services-hero__content opinions__content">
+
+                        <p class="services-hero__eyebrow">
+                            O LUDZIACH, DZIĘKI KTÓRYM TU JESTEM
                         </p>
-            
-                        <p>
-                            TWORZĘ Z LUDŹMI, DLA LUDZI. I TO WŁAŚNIE CENIĘ NAJBARDZIEJ
-                        </p>
-            
+
+                        <h1 class="services-hero__title">
+                            OPINIE
+                        </h1>
+
+                        <div class="services-hero__description opinions__description">
+
+                            <p>
+                                KAŻDY PROJEKT TO DLA MNIE NIE TYLKO WSPÓŁPRACA,<br>
+                                ALE TEŻ RELACJA, ZAUFANIE I WSPÓLNIE TWORZONA HISTORIA
+                            </p>
+
+                            <p>
+                                TWORZĘ Z LUDŹMI, DLA LUDZI. I TO WŁAŚNIE CENIĘ NAJBARDZIEJ
+                            </p>
+
+                        </div>
+
                     </div>
-            
+
                 </div>
-            
+
+
             </div>
 
 
-            <!-- =============================================
+            <!-- ==================================================
                  JULIA
-            ============================================== -->
+
+                 Celowo znajduje się POZA opinions__hero.
+                 Dzięki temu może przechodzić wizualnie
+                 z pierwszego ekranu na drugi.
+            =================================================== -->
 
             <div class="opinions__julia">
 
@@ -118,73 +129,74 @@
             </div>
 
 
-            <!-- =============================================
-                 REVIEWS CAROUSEL
-            ============================================== -->
+            <!-- ==================================================
+                 EKRAN 2 — REVIEWS
+            =================================================== -->
 
-            <div class="opinions__reviews">
-
-
-                <div class="reviews-carousel">
+            <div class="opinions__reviews-section">
 
 
-                    <!-- LEFT ARROW -->
-
-                    <button
-                        class="reviews-arrow reviews-arrow-prev"
-                        type="button"
-                        aria-label="Poprzednia opinia"
-                    >
-                        &#8249;
-                    </button>
+                <div class="opinions__reviews">
 
 
-                    <!-- VIEWPORT -->
-
-                    <div class="reviews-viewport">
+                    <div class="reviews-carousel">
 
 
-                        <!--
-                            Karty opinii NIE będą wpisywane tutaj ręcznie.
+                        <!-- LEFT ARROW -->
 
-                            reviews.js wygeneruje je automatycznie
-                            na podstawie danych przygotowanych
-                            z data/opinie.xlsx.
-                        -->
+                        <button
+                            class="reviews-arrow reviews-arrow-prev"
+                            type="button"
+                            aria-label="Poprzednia opinia"
+                        >
+                            &#8249;
+                        </button>
 
-                        <div class="reviews-track">
 
-                            <!-- reviews.js -->
+                        <!-- VIEWPORT -->
+
+                        <div class="reviews-viewport">
+
+
+                            <!--
+                                reviews.js generuje karty automatycznie
+                                na podstawie data/opinie.json.
+                            -->
+
+                            <div class="reviews-track">
+
+                                <!-- reviews.js -->
+
+                            </div>
+
 
                         </div>
+
+
+                        <!-- RIGHT ARROW -->
+
+                        <button
+                            class="reviews-arrow reviews-arrow-next"
+                            type="button"
+                            aria-label="Następna opinia"
+                        >
+                            &#8250;
+                        </button>
 
 
                     </div>
 
 
-                    <!-- RIGHT ARROW -->
+                    <!-- CAROUSEL DOTS -->
 
-                    <button
-                        class="reviews-arrow reviews-arrow-next"
-                        type="button"
-                        aria-label="Następna opinia"
+                    <div
+                        class="reviews-dots"
+                        aria-label="Nawigacja opinii"
                     >
-                        &#8250;
-                    </button>
+                        <!-- reviews.js -->
+                    </div>
 
 
-                </div>
-
-
-                <!-- =========================================
-                     CAROUSEL DOTS
-                ========================================== -->
-
-                <div
-                    class="reviews-dots"
-                    aria-label="Nawigacja opinii"
-                >
-                    <!-- reviews.js -->
                 </div>
 
 
