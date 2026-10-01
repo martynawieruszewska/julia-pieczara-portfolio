@@ -2136,9 +2136,9 @@ img {
     display: flex;
     align-items: stretch;
 
-    gap: clamp(10px, 1vw, 18px);
+    gap: clamp(16px, 1.5vw, 28px);
 
-    margin-bottom: clamp(10px, 1vw, 18px);
+    margin-bottom: clamp(16px, 1.5vw, 28px);
 }
 
 .portfolio-gallery__row:last-child {
@@ -2240,4 +2240,424 @@ img {
 
 .portfolio-side-nav__link--active {
     font-weight: 800;
+}
+
+.portfolio-gallery--plener {
+    padding-top: clamp(180px, 16vw, 300px);
+}
+
+/* =========================================================
+   PORTFOLIO — SOCIAL MEDIA
+========================================================= */
+
+.portfolio-social {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(180px, 16vw, 300px)
+        10%
+        clamp(120px, 10vw, 200px);
+
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — PROJECT
+========================================================= */
+
+.portfolio-social__project {
+    width: 100%;
+
+    margin-bottom: clamp(55px, 5vw, 90px);
+}
+
+.portfolio-social__project:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — LABELS
+========================================================= */
+
+.portfolio-social__labels {
+    width: 100%;
+
+    margin: 0 0 clamp(20px, 1.8vw, 32px);
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.15vw, 21px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    color: #fff;
+}
+
+.portfolio-social__labels span {
+
+    display: inline-block;
+
+    transform: scale(1);
+
+    transform-origin: left center;
+
+    transition:
+
+        transform 0.25s ease,
+
+        font-weight 0.25s ease;
+
+    cursor: default;
+
+}
+
+.portfolio-social__labels span:hover {
+
+    transform: scale(1.08);
+
+    font-weight: 500;
+
+}
+
+.portfolio-social__labels--split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — ROW
+========================================================= */
+
+.portfolio-social__row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: clamp(16px, 1.5vw, 28px);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — IMAGE
+========================================================= */
+
+.portfolio-social__item {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    /* CELOWO bez border-radius */
+    border-radius: 0;
+}
+
+.portfolio-social__item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+/* =========================================================
+   PORTFOLIO — VIDEO
+========================================================= */
+
+.portfolio-social__project--video {
+    margin-top: clamp(90px, 8vw, 150px);
+    margin-bottom: clamp(100px, 10vw, 180px);
+}
+
+
+
+/* pojedynczy film */
+.portfolio-social__item--video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+
+    /* VIDEO NIE MA ZAOKRĄGLONYCH ROGÓW */
+    border-radius: 0;
+
+    background: #d7d7d5;
+    cursor: pointer;
+}
+
+
+/* właściwe video */
+.portfolio-social__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PLAY
+========================================================= */
+
+.portfolio-social__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: clamp(52px, 4.5vw, 72px);
+    height: clamp(52px, 4.5vw, 72px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(20, 20, 20, 0.68);
+    color: #fff;
+
+    cursor: pointer;
+    z-index: 5;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.portfolio-social__play span {
+    display: block;
+
+    margin-left: 4px;
+
+    font-size: clamp(20px, 1.8vw, 30px);
+    line-height: 1;
+}
+
+
+.portfolio-social__play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: rgba(20, 20, 20, 0.82);
+}
+
+
+/* kiedy film leci */
+.portfolio-social__item--video.is-playing .portfolio-social__play {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* gdy film jest zatrzymany przycisk wraca */
+.portfolio-social__item--video:not(.is-playing) .portfolio-social__play {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .portfolio-social__row--video {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .portfolio-social__row--video {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================================
+   PORTFOLIO — PRODUKCJE
+========================================================= */
+
+.portfolio-produkcje {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("../assets/backgrounds/portfolio1.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+
+/* LEWA LISTA */
+
+.portfolio-produkcje__menu {
+    position: absolute;
+
+    left: 7%;
+    top: 17%;
+
+    width: clamp(220px, 20vw, 380px);
+}
+
+
+.portfolio-produkcje__menu-items {
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+
+    color: #fff;
+}
+
+
+.portfolio-produkcje__menu-items span {
+    display: block;
+}
+
+
+/* LINIA POD NAPISAMI */
+
+.portfolio-produkcje__line {
+    width: 100%;
+    height: 1px;
+
+    margin-top: clamp(14px, 1.2vw, 22px);
+
+    background: rgba(255, 255, 255, 0.85);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   PORTFOLIO — STRONY INTERNETOWE
+========================================================= */
+
+.portfolio-web {
+    position: relative;
+
+    width: 100%;
+    height: min(78vw, 1000px);
+
+    background-image: url("../assets/backgrounds/portfolio2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    overflow: hidden;
+}
+
+.portfolio-web__title {
+    position: absolute;
+
+    top: 10%;
+    left: 11%;
+
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+
+    color: #fff;
+}
+
+/* =========================================================
+   VIDEO — ENDLESS CAROUSEL
+========================================================= */
+
+.portfolio-video-carousel {
+    position: relative;
+
+    width: 110%;
+    margin-left: -5%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VIDEO — TRACK
+========================================================= */
+
+.portfolio-video-carousel__track {
+    display: flex;
+    align-items: stretch;
+
+    width: max-content;
+
+    gap: clamp(18px, 1.5vw, 28px);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   VIDEO — POJEDYNCZY ELEMENT
+========================================================= */
+
+.portfolio-video-carousel
+.portfolio-social__item--video {
+    flex: 0 0 clamp(180px, 16vw, 305px);
+
+    width: clamp(180px, 16vw, 305px);
+
+    aspect-ratio: 9 / 16;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-video-carousel__track {
+        transform: none !important;
+    }
+
 }
