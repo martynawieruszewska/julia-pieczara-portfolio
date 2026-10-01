@@ -2102,3 +2102,142 @@ img {
         animation: none !important;
     }
 }
+
+/* =========================================================
+   PORTFOLIO — GALLERY
+========================================================= */
+
+.portfolio-gallery {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(90px, 7vw, 135px)
+        4%
+        clamp(110px, 9vw, 170px);
+
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY ROWS
+========================================================= */
+
+.portfolio-gallery__row {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: clamp(10px, 1vw, 18px);
+
+    margin-bottom: clamp(10px, 1vw, 18px);
+}
+
+.portfolio-gallery__row:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY ITEMS
+========================================================= */
+
+.portfolio-gallery__item {
+    height: clamp(250px, 22vw, 420px);
+
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+
+/* WĄSKIE ZDJĘCIE */
+
+.portfolio-gallery__item--narrow {
+    flex: 1 1 0;
+}
+
+
+/* SZEROKIE ZDJĘCIE */
+
+.portfolio-gallery__item--wide {
+    flex: 1.65 1 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY IMAGES
+========================================================= */
+
+.portfolio-gallery__item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   PORTFOLIO — SIDE NAV
+========================================================= */
+
+.portfolio-side-nav {
+    position: fixed;
+
+    top: 50%;
+    left: 1.2%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(45px, 5vh, 75px);
+
+    z-index: 900;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-side-nav.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.portfolio-side-nav__link {
+    display: block;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.15vw, 21px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+
+    color: #000;
+
+    white-space: nowrap;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    transition:
+        font-weight 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portfolio-side-nav__link--active {
+    font-weight: 800;
+}
