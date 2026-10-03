@@ -141,7 +141,7 @@ img {
 .hero__content {
     position: absolute;
     top: 25%;
-    left: 9%;
+    left: 6%;
     width: 73%;
     z-index: 2;
 }
@@ -1143,7 +1143,6 @@ img {
     width: 52%;
 
     transform: translateY(-50%);
-
     text-align: right;
 
     z-index: 2;
