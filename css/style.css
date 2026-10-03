@@ -775,7 +775,7 @@ img {
 .services-hero__content {
     position: absolute;
 
-    top: 56%;
+    top: 48%;
     left: 11.5%;
 
     width: 75%;
@@ -953,10 +953,12 @@ img {
 .service-section__content {
     position: absolute;
 
-    top: 34%;
+    top: 50%;
     left: 14%;
 
     width: 72%;
+
+    transform: translateY(-50%);
 }
 
 .service-section__heading {
@@ -1361,7 +1363,7 @@ img {
 .opinions__julia {
     position: absolute;
 
-    top: -5%;
+    top: -10%;
     right: -7%;
 
     width: 58%;
