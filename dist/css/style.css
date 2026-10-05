@@ -1,0 +1,2664 @@
+/* =========================================================
+   JULIA PIECZARA — PORTFOLIO
+========================================================= */
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --font-main: "Manrope", sans-serif;
+    --font-display: "Syncopate", sans-serif;
+}
+
+
+/* =========================================================
+   RESET & GLOBAL
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-main);
+}
+
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section {
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav {
+    position: fixed;
+    top: 6.7%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 59%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.35s ease;
+}
+
+.nav--hidden {
+    transform: translate(-50%, -180%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav__link {
+    display: inline-block;
+
+    font-family: var(--font-main);
+    font-size: clamp(10px, 0.79vw, 15px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.20em;
+    white-space: nowrap;
+
+    transform: scale(1);
+    transform-origin: center;
+
+    transition:
+        transform 0.25s ease,
+        font-weight 0.25s ease;
+}
+
+.nav__link:hover {
+    transform: scale(1.15);
+}
+
+.nav__link--active {
+    font-weight: 800;
+    transform: scale(1.15);
+}
+
+.nav__link--active:hover {
+    transform: scale(1.22);
+}
+
+
+/* =========================================================
+   O MNIE — HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh + 8px);
+    margin: 0;
+
+    background-image: url("../assets/backgrounds/omnie1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero__content {
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    width: 73%;
+    z-index: 2;
+}
+
+.hero__title {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(90px, 10.5vw, 200px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: 0;
+
+    white-space: nowrap;
+    transform: translateX(-0.08em);
+}
+
+.hero__info {
+    width: 100%;
+    margin-top: clamp(52px, 5vw, 90px);
+}
+
+.hero__name {
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(23px, 1.75vw, 32px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.hero__profession {
+    margin: 13px 0 0;
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+    font-size: clamp(20px, 1.65vw, 31px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+
+    white-space: nowrap;
+}
+
+.hero__description {
+    margin: clamp(32px, 3vw, 55px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: 0.14em;
+
+    white-space: nowrap;
+}
+
+.hero__description strong {
+    font-weight: 400;
+}
+
+.hero__logo {
+    position: absolute;
+    left: 51.5%;
+    bottom: 10%;
+    transform: translateX(-50%);
+
+    width: clamp(60px, 4.5vw, 86px);
+    height: auto;
+
+    object-fit: contain;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   O MNIE — HERO TYPEWRITER
+========================================================= */
+
+.hero__typing-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero__typing-word {
+    position: absolute;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(14px, 1.15vw, 22px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+    opacity: 0;
+
+    transition: opacity 0.18s ease;
+}
+
+.hero__typing-word.is-visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   O MNIE — ABOUT
+========================================================= */
+
+.about {
+    position: relative;
+
+    width: calc(100% + 4px);
+    margin-left: -2px;
+    margin-top: -8px;
+    margin-bottom: 0;
+
+    aspect-ratio: 1.78 / 1;
+
+    background-image: url("../assets/backgrounds/omnie2.svg");
+    background-repeat: no-repeat;
+    background-size: calc(100% + 10px) calc(100% + 10px);
+    background-position: center center;
+
+    overflow: hidden;
+    z-index: 2;
+}
+
+.about__heading {
+    position: absolute;
+    top: 20.2%;
+    left: 5.6%;
+}
+
+.about__heading h2 {
+    margin: 0;
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+    font-size: clamp(19px, 1.65vw, 31px);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.about__line {
+    display: block;
+
+    width: clamp(120px, 11.5vw, 215px);
+    height: 1px;
+    margin-top: clamp(20px, 2vw, 37px);
+
+    background: var(--white);
+}
+
+.about__text {
+    position: absolute;
+    top: 19.8%;
+    right: 5.6%;
+    width: 48%;
+    margin: 0;
+
+    color: var(--black);
+
+    font-family: var(--font-main);
+    font-size: clamp(10px, 1.02vw, 19px);
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: 0.14em;
+
+    text-align: right;
+}
+
+.about__text p {
+    margin: 0 0 clamp(25px, 3.3vw, 61px);
+}
+
+.about__text strong {
+    font-weight: 800;
+}
+
+.about__text p:nth-child(2) strong,
+.about__text p:nth-child(3) strong:first-of-type {
+    color: var(--white);
+}
+
+.about__text p:nth-child(3) strong:last-of-type {
+    color: var(--black);
+}
+
+.about__text .about__last {
+    margin-bottom: 0;
+}
+
+.about__industries {
+    position: absolute;
+    right: 5.6%;
+    bottom: 10.2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(10px, 1.2vw, 22px);
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.3vw, 24px);
+    font-weight: 300;
+    line-height: 1;
+
+    white-space: nowrap;
+    text-align: right;
+}
+
+.about__dot {
+    font-size: 0.65em;
+}
+
+.about__industries > span:not(.about__dot) {
+    display: inline-block;
+
+    cursor: default;
+
+    transform: scale(1);
+    transform-origin: center;
+
+    transition:
+        transform 0.25s ease,
+        font-weight 0.25s ease;
+}
+
+.about__industries > span:not(.about__dot):hover {
+    transform: scale(1.18);
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   O MNIE — EXPERIENCE
+========================================================= */
+
+.experience {
+    position: relative;
+
+    width: calc(100% + 8px);
+    margin-left: -4px;
+    margin-top: -4px;
+    margin-bottom: 0;
+
+    aspect-ratio: 1.805 / 0.82;
+
+    background-image: url("../assets/backgrounds/omnie3.svg");
+    background-repeat: no-repeat;
+    background-size: 115% auto;
+    background-position: center center;
+
+    overflow: hidden;
+    z-index: 3;
+}
+
+
+/* STATS */
+
+.stats {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 76%;
+    height: 28%;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 999px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.stats::before,
+.stats::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+
+    width: 34%;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.stats::before {
+    left: 6%;
+}
+
+.stats::after {
+    right: 6%;
+}
+
+.stats__top-gap {
+    display: none;
+}
+
+.stat {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.stat__number {
+    display: inline-block;
+
+    font-family: var(--font-main);
+    font-size: clamp(42px, 4vw, 74px);
+    font-weight: 400;
+    line-height: 1;
+
+    transform-origin: center;
+}
+
+.stat__number.is-finished {
+    animation: numberFinish 0.6s ease;
+}
+
+@keyframes numberFinish {
+    0% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.stat__label {
+    margin-top: clamp(14px, 1.5vw, 28px);
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.25vw, 23px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+
+/* CLIENT LOGOS */
+
+.clients {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 94%;
+    overflow: hidden;
+}
+
+.clients__track {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: max-content;
+    gap: clamp(28px, 2.7vw, 52px);
+
+    animation: clientsInfiniteScroll 32s linear infinite;
+    will-change: transform;
+}
+
+.clients__track img {
+    display: block;
+    flex: 0 0 auto;
+
+    width: auto;
+    max-width: clamp(65px, 6vw, 115px);
+    max-height: clamp(40px, 5vw, 88px);
+
+    object-fit: contain;
+}
+
+.clients:hover .clients__track {
+    animation-play-state: paused;
+}
+
+@keyframes clientsInfiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(var(--clients-distance));
+    }
+}
+
+
+/* TRAITS */
+
+.traits {
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+
+    width: 72%;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+
+    column-gap: clamp(25px, 3vw, 60px);
+}
+
+.trait {
+    position: relative;
+
+    height: 80px;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trait__word {
+    display: block;
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+    font-size: clamp(17px, 1.65vw, 31px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.22em;
+
+    white-space: nowrap;
+    text-align: center;
+}
+
+.trait__black {
+    color: var(--black);
+    font-weight: 800;
+}
+
+.trait__line {
+    position: absolute;
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.trait__line--bottom {
+    bottom: 0;
+}
+
+.trait__line--top {
+    top: 0;
+}
+
+.traits__dot {
+    align-self: center;
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+    font-size: clamp(28px, 2vw, 38px);
+    font-weight: 700;
+    line-height: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   GLOBAL FOOTER
+   UŻYWANY IDENTYCZNIE NA KAŻDEJ STRONIE
+========================================================= */
+
+.footer {
+    position: relative;
+
+    width: 100%;
+    height: 140px;
+
+    background-image: url("../assets/backgrounds/footer.svg");
+    background-repeat: no-repeat;
+    background-size: 115% auto;
+    background-position: center;
+
+    color: var(--white);
+    font-family: var(--font-main);
+
+    overflow: hidden;
+}
+
+.footer__social {
+    position: absolute;
+    top: 30px;
+    left: 6.6%;
+}
+
+.footer__social h3 {
+    margin: 0 0 18px;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.footer__social-icons {
+    display: flex;
+    align-items: center;
+    gap: clamp(25px, 2.3vw, 45px);
+}
+
+.footer__social-icons a {
+    display: block;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.footer__social-icons img {
+    width: clamp(30px, 2.3vw, 44px);
+    height: clamp(30px, 2.3vw, 44px);
+
+    object-fit: contain;
+}
+
+.footer__social-icons a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.footer__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.footer__logo img {
+    width: clamp(45px, 3.3vw, 64px);
+    height: auto;
+
+    object-fit: contain;
+}
+
+.footer__contact {
+    position: absolute;
+    top: 30px;
+    right: 6.2%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+.footer__contact h3 {
+    margin: 0 0 18px;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.footer__contact a {
+    display: block;
+
+    font-family: var(--font-main);
+    font-size: clamp(11px, 0.9vw, 17px);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0.20em;
+
+    white-space: nowrap;
+
+    transition: opacity 0.25s ease;
+}
+
+.footer__contact a:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   USŁUGI — HERO
+========================================================= */
+
+.services-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("../assets/backgrounds/uslugi1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.services-hero__content {
+    position: absolute;
+
+    top: 48%;
+    left: 11.5%;
+
+    width: 75%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+}
+
+.services-hero__eyebrow {
+    position: static;
+
+    margin: 0 0 clamp(35px, 3.5vw, 65px);
+
+    font-family: var(--font-main);
+    font-size: clamp(23px, 1.75vw, 32px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    color: #000;
+}
+
+.services-hero__title {
+    position: static;
+
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(75px, 8vw, 150px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: 0;
+
+    color: #fff;
+
+    white-space: nowrap;
+    transform: none;
+}
+
+.services-hero__description {
+    position: static;
+
+    margin: clamp(32px, 3vw, 55px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: 0.14em;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+.services-hero__tools {
+    position: absolute;
+
+    left: 11.5%;
+    bottom: 9%;
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(20px, 2vw, 40px);
+
+    z-index: 2;
+}
+
+.services-hero__tool {
+    display: block;
+
+    width: auto;
+    height: clamp(32px, 2.6vw, 50px);
+
+    object-fit: contain;
+
+    transform: scale(1);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+
+    cursor: default;
+}
+
+.services-hero__tool:hover {
+    transform: scale(1.17);
+}
+
+.services-hero__tool[src*="app4.png"] {
+    position: relative;
+    top: 7px;
+}
+
+
+/* =========================================================
+   USŁUGI — TYPEWRITER
+========================================================= */
+
+.services-typing-layer {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.services-typing-word {
+    position: absolute;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(14px, 1.15vw, 22px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 0.18s ease;
+}
+
+.services-typing-word.is-visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   USŁUGI — SERVICE SECTIONS
+========================================================= */
+
+.service-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    margin-top: -4px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.service-section--social {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+.service-section--photo {
+    background-image: url("../assets/backgrounds/uslugi3.svg");
+}
+
+.service-section--performance {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+.service-section--branding {
+    background-image: url("../assets/backgrounds/uslugi4.svg");
+    background-size: 127% auto;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+}
+
+.service-section--web {
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+}
+
+.service-section__content {
+    position: absolute;
+
+    top: 50%;
+    left: 14%;
+
+    width: 72%;
+
+    transform: translateY(-50%);
+}
+
+.service-section__heading {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(18px, 1.5vw, 30px);
+}
+
+.service-section__number {
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+    line-height: 1;
+
+    color: #000;
+}
+
+.service-section__heading h2 {
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(17px, 1.45vw, 27px);
+    font-weight: 800;
+    line-height: 1;
+
+    color: #000;
+}
+
+.service-section__subtitle {
+    margin: clamp(32px, 2.8vw, 52px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(16px, 1.55vw, 29px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.20em;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+.service-section__description {
+    margin: clamp(28px, 2.5vw, 46px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(14px, 1.2vw, 22px);
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: #000;
+}
+
+.service-section__tags {
+    margin-top: clamp(30px, 3vw, 55px);
+
+    width: 82%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: clamp(12px, 1vw, 20px);
+}
+
+.service-section__tags span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: clamp(44px, 3.8vw, 70px);
+    padding: 0 20px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+
+    font-family: var(--font-main);
+    font-size: clamp(12px, 1.15vw, 21px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.18em;
+
+    color: #fff;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+
+    cursor: default;
+}
+
+.service-section__tags span:hover {
+    transform: scale(1.05);
+
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #000;
+}
+
+.service-section__tags--photo {
+    width: 84%;
+
+    grid-template-columns:
+        0.75fr
+        0.75fr
+        1.1fr
+        1fr;
+}
+
+.service-section__tags .service-section__tag--dark {
+    border-color: #000;
+    color: #000;
+}
+
+.service-section__tags .service-section__tag--dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.service-section__tags--performance {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.6fr;
+}
+
+.service-section__tags--performance .service-tag--wide {
+    grid-column: auto;
+}
+
+.service-section__tags--branding {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.6fr;
+}
+
+.service-section__tags--branding .service-tag--personal {
+    grid-column: 1 / 3;
+}
+
+.service-section__tags--web {
+    width: 88%;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.4fr;
+}
+
+
+/* =========================================================
+   PORTFOLIO — HERO
+========================================================= */
+
+.portfolio-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("../assets/backgrounds/portfolio.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.portfolio-hero__content {
+    position: absolute;
+
+    top: 53%;
+    right: 6.5%;
+
+    width: 52%;
+
+    transform: translateY(-50%);
+    text-align: right;
+
+    z-index: 2;
+}
+
+.portfolio-hero__eyebrow {
+    margin: 0 2% clamp(35px, 3.5vw, 65px) 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(23px, 1.75vw, 32px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.025em;
+
+    color: #000;
+}
+
+.portfolio-hero__title {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(75px, 8vw, 150px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: 0;
+
+    color: #fff;
+
+    white-space: nowrap;
+
+    transform: translateX(-7%);
+}
+
+.portfolio-hero__description {
+    margin: clamp(32px, 3vw, 55px) 0 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1vw, 19px);
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: 0.14em;
+
+    color: #fff;
+
+    white-space: nowrap;
+    text-align: right;
+}
+
+
+/* =========================================================
+   PORTFOLIO — CATEGORIES
+========================================================= */
+
+.portfolio-hero__categories {
+    position: absolute;
+
+    top: 18%;
+    left: 0%;
+
+    width: 34%;
+    height: 72%;
+
+    z-index: 3;
+}
+
+.portfolio-hero__line {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+    pointer-events: none;
+}
+
+.portfolio-hero__line path {
+    fill: none;
+
+    stroke: rgba(255, 255, 255, 0.95);
+    stroke-width: 1.3;
+
+    vector-effect: non-scaling-stroke;
+}
+
+.portfolio-hero__line circle {
+    fill: #fff;
+}
+
+.portfolio-hero__category {
+    position: absolute;
+
+    z-index: 2;
+
+    font-family: var(--font-main);
+    font-size: clamp(14px, 1.15vw, 21px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.10em;
+
+    color: #fff;
+
+    white-space: nowrap;
+
+    transform: translateY(-50%);
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.portfolio-hero__category:hover {
+    transform: translateY(-50%) scale(1.08);
+    opacity: 0.8;
+}
+
+.portfolio-hero__category--photo {
+    top: 12%;
+    left: 38%;
+}
+
+.portfolio-hero__category--social {
+    top: 48%;
+    left: 35%;
+}
+
+.portfolio-hero__category--production {
+    top: 83%;
+    left: 38%;
+}
+
+
+/* =========================================================
+   OPINIE — PAGE
+========================================================= */
+
+.opinions-page {
+    margin: 0;
+    background: #d6d6d4;
+}
+
+
+/* =========================================================
+   OPINIE — TWO FULL SCREENS
+========================================================= */
+
+.opinions {
+    position: relative;
+
+    width: 100%;
+    height: 200vh;
+    min-height: 0;
+
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   OPINIE — SCREEN 1 / HERO
+========================================================= */
+
+.opinions__hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
+
+.opinions__background {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.opinions__intro {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+/*
+   .opinions__content korzysta z dokładnie tej samej
+   geometrii co .services-hero__content.
+*/
+
+.opinions__content {
+    z-index: 5;
+}
+
+.opinions__description p {
+    margin: 0;
+    color: #000;
+}
+
+.opinions__description p + p {
+    margin-top: clamp(20px, 1.8vw, 34px);
+}
+
+
+/* =========================================================
+   OPINIE — JULIA
+   Pozycjonowana względem całych 200vh.
+   Dzięki temu może później przejść przez oba ekrany.
+========================================================= */
+
+.opinions__julia {
+    position: absolute;
+
+    top: -7%;
+    right: -7%;
+
+    width: 58%;
+    height: 165vh;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.opinions__julia-image {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center top;
+}
+
+
+/* =========================================================
+   OPINIE — SCREEN 2 / REVIEWS
+========================================================= */
+
+.opinions__reviews-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.opinions__reviews {
+    position: absolute;
+
+    /* cały rząd opinii niżej */
+    top: 62%;
+
+    left: 5%;
+    right: 5%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   OPINIE — CAROUSEL
+========================================================= */
+
+.opinions .reviews-carousel {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.opinions .reviews-viewport {
+    width: 100%;
+
+    /*
+       Musimy zostawić miejsce na:
+       - powiększenie środkowej karty
+       - podpis pod kartą
+    */
+    overflow: hidden;
+
+    padding: 55px 0 70px;
+}
+
+.opinions .reviews-track {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 28px;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   OPINIE — REVIEW ITEM
+========================================================= */
+
+.opinions .review-item {
+    position: relative;
+
+    /*
+       Zawsze dokładnie 3 opinie w rzędzie.
+    */
+    flex: 0 0 calc((100% - 56px) / 3);
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*
+       Wszystkie mają IDENTYCZNY bazowy rozmiar.
+       Boczne są po prostu lekko pomniejszone.
+    */
+    transform: scale(0.92);
+    transform-origin: center center;
+
+    opacity: 1;
+
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/*
+   ŚRODKOWA / AKTYWNA OPINIA
+
+   Nie zmieniamy jej width ani height.
+   Powiększamy cały element proporcjonalnie.
+*/
+
+.opinions .review-item.is-active {
+    transform: scale(1.06);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   OPINIE — REVIEW CARD
+========================================================= */
+
+.opinions .review-card {
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    padding: 38px 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    text-align: center;
+
+    box-shadow: none;
+
+    transition:
+        box-shadow 0.55s ease;
+}
+
+
+/*
+   Środkowy kafelek NIE dostaje innej wysokości.
+   Jego większy rozmiar wynika wyłącznie ze scale().
+*/
+
+.opinions .review-item.is-active .review-card {
+    height: 280px;
+
+    box-shadow:
+        0 16px 38px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   OPINIE — REVIEW TEXT
+========================================================= */
+
+.opinions .review-text {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    font-family: var(--font-main);
+
+    font-size: 11px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #777777;
+
+    text-align: center;
+
+    white-space: pre-line;
+}
+
+.opinions .review-stars {
+    display: none;
+}
+
+
+/* =========================================================
+   OPINIE — AUTHOR
+========================================================= */
+
+.opinions .review-author {
+    position: relative;
+
+    width: 100%;
+
+    margin: 30px 0 0;
+
+    font-family: var(--font-main);
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0.20em;
+
+    color: #555555;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/*
+   IMIĘ — normalne
+*/
+
+.opinions .review-author__name {
+    font-weight: 400;
+}
+
+
+/*
+   FIRMA — pogrubiona,
+   tak jak na podesłanym wcześniej wzorze.
+*/
+
+.opinions .review-author__company {
+    font-weight: 700;
+}
+
+
+/* zabezpieczenie, jeżeli JS używa <strong> */
+
+.opinions .review-author strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   OPINIE — ARROWS
+========================================================= */
+
+.opinions .reviews-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: rgba(70, 70, 70, 0.65);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 46px;
+    font-weight: 200;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.opinions .reviews-arrow:hover {
+    opacity: 0.55;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.opinions .reviews-arrow-prev {
+    left: -48px;
+}
+
+.opinions .reviews-arrow-next {
+    right: -48px;
+}
+
+
+/* =========================================================
+   OPINIE — DOTS
+========================================================= */
+
+.opinions .reviews-dots {
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+}
+
+.opinions .reviews-dot {
+    width: 6px;
+    height: 6px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(80, 80, 80, 0.3);
+
+    cursor: pointer;
+}
+
+.opinions .reviews-dot.is-active {
+    background: rgba(50, 50, 50, 0.8);
+
+    transform: scale(1.3);
+}
+
+
+/* =========================================================
+   MOBILE — GLOBAL / O MNIE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        width: 100%;
+        min-height: 700px;
+        margin-left: 0;
+
+        background-size: cover;
+        background-position: 63% center;
+    }
+
+    .nav {
+        top: 30px;
+        left: 22px;
+
+        transform: none;
+
+        width: calc(100% - 44px);
+
+        justify-content: flex-start;
+
+        gap: 25px;
+
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav--hidden {
+        transform: translateY(-180%);
+        opacity: 0;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav__link {
+        font-size: 9px;
+    }
+
+    .hero__content {
+        top: 125px;
+        left: 22px;
+
+        width: calc(100% - 44px);
+    }
+
+    .hero__title {
+        font-size: clamp(68px, 20vw, 100px);
+        white-space: nowrap;
+    }
+
+    .hero__info {
+        margin-top: 45px;
+    }
+
+    .hero__name {
+        font-size: 19px;
+    }
+
+    .hero__profession {
+        max-width: 340px;
+
+        font-size: 14px;
+
+        white-space: normal;
+    }
+
+    .hero__description {
+        max-width: 340px;
+
+        font-size: 9px;
+
+        white-space: normal;
+    }
+
+    .hero__logo {
+        left: 50%;
+        bottom: 10%;
+
+        width: 55px;
+    }
+
+    .about {
+        min-height: 760px;
+
+        background-position: 43% center;
+    }
+
+    .about__heading {
+        top: 8%;
+        left: 22px;
+    }
+
+    .about__heading h2 {
+        font-size: 20px;
+    }
+
+    .about__line {
+        width: 110px;
+
+        margin-top: 15px;
+    }
+
+    .about__text {
+        top: 28%;
+        left: 22px;
+        right: auto;
+
+        width: calc(100% - 44px);
+        padding: 18px;
+
+        background: rgba(255, 255, 255, 0.26);
+
+        backdrop-filter: blur(3px);
+
+        font-size: 8px;
+        line-height: 1.5;
+
+        text-align: right;
+    }
+
+    .about__text p {
+        margin-bottom: 20px;
+    }
+
+    .about__industries {
+        right: 22px;
+        bottom: 5%;
+
+        width: calc(100% - 44px);
+
+        flex-wrap: wrap;
+
+        gap: 8px 12px;
+
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .experience {
+        min-height: 760px;
+
+        background-size: cover;
+    }
+
+    .stats {
+        top: 7%;
+
+        width: calc(100% - 44px);
+        height: auto;
+
+        padding: 30px 20px;
+
+        border-radius: 40px;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .stats__top-gap {
+        width: 20%;
+    }
+
+    .stat__number {
+        font-size: 35px;
+    }
+
+    .stat__label {
+        margin-top: 7px;
+
+        font-size: 11px;
+    }
+
+    .clients {
+        top: 55%;
+
+        width: calc(100% - 44px);
+    }
+
+    .clients__track {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        gap: 25px;
+    }
+
+    .clients__track img {
+        width: auto;
+
+        max-width: 55px;
+        max-height: 38px;
+    }
+
+    .traits {
+        bottom: 4%;
+
+        width: calc(100% - 44px);
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .trait__word {
+        font-size: 14px;
+    }
+
+    .trait__line {
+        width: 210px;
+    }
+
+    .trait__line--bottom {
+        margin-top: 10px;
+    }
+
+    .trait__line--top {
+        margin-bottom: 10px;
+    }
+
+    .traits__dot {
+        display: none;
+    }
+
+
+    /* GLOBAL FOOTER — MOBILE */
+
+    .footer {
+        height: 330px;
+    }
+
+    .footer__social {
+        top: 35px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        text-align: center;
+    }
+
+    .footer__social-icons {
+        justify-content: center;
+    }
+
+    .footer__logo {
+        top: 52%;
+    }
+
+    .footer__contact {
+        top: auto;
+        right: auto;
+        bottom: 35px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        align-items: center;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   OPINIE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .opinions {
+        height: 200vh;
+
+        background-size: auto 55%;
+    }
+
+    .opinions__intro {
+        inset: 0;
+    }
+
+    .opinions__content {
+        top: 110px;
+        left: 24px;
+
+        width: calc(100% - 48px);
+
+        transform: none;
+    }
+
+    .opinions__content .services-hero__eyebrow {
+        font-size: 13px;
+
+        white-space: normal;
+    }
+
+    .opinions__content .services-hero__title {
+        font-size: 58px;
+    }
+
+    .opinions__description {
+        margin-top: 28px;
+
+        font-size: 9px;
+        line-height: 1.6;
+
+        white-space: normal;
+    }
+
+    .opinions__description br {
+        display: none;
+    }
+
+    .opinions__julia {
+        top: 310px;
+        right: -16%;
+
+        width: 90%;
+        height: 500px;
+    }
+
+    .opinions__reviews {
+        left: 24px;
+        right: 24px;
+    }
+
+    .opinions .reviews-viewport {
+        padding: 30px 0 50px;
+    }
+
+    .opinions .reviews-track {
+        gap: 18px;
+    }
+
+    .opinions .review-item {
+        flex: 0 0 100%;
+
+        transform: none;
+        opacity: 1;
+    }
+
+    .opinions .review-card,
+    .opinions .review-item.is-active .review-card {
+        height: 220px;
+
+        padding: 30px 26px;
+    }
+
+    .opinions .review-text {
+        font-size: 10px;
+    }
+
+    .opinions .review-author {
+        margin-top: 22px;
+
+        font-size: 10px;
+    }
+
+    .opinions .reviews-arrow {
+        display: none;
+    }
+
+    .opinions .reviews-dots {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .clients__track {
+        animation: none;
+    }
+
+    .stat__number {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   PORTFOLIO — GALLERY
+========================================================= */
+
+.portfolio-gallery {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(90px, 7vw, 135px)
+        4%
+        clamp(110px, 9vw, 170px);
+
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY ROWS
+========================================================= */
+
+.portfolio-gallery__row {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: clamp(16px, 1.5vw, 28px);
+
+    margin-bottom: clamp(16px, 1.5vw, 28px);
+}
+
+.portfolio-gallery__row:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY ITEMS
+========================================================= */
+
+.portfolio-gallery__item {
+    height: clamp(250px, 22vw, 420px);
+
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+
+/* WĄSKIE ZDJĘCIE */
+
+.portfolio-gallery__item--narrow {
+    flex: 1 1 0;
+}
+
+
+/* SZEROKIE ZDJĘCIE */
+
+.portfolio-gallery__item--wide {
+    flex: 1.65 1 0;
+}
+
+
+/* =========================================================
+   PORTFOLIO — GALLERY IMAGES
+========================================================= */
+
+.portfolio-gallery__item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   PORTFOLIO — SIDE NAV
+========================================================= */
+
+.portfolio-side-nav {
+    position: fixed;
+
+    top: 50%;
+    left: 1.2%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(45px, 5vh, 75px);
+
+    z-index: 900;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-side-nav.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.portfolio-side-nav__link {
+    display: block;
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.15vw, 21px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+
+    color: #000;
+
+    white-space: nowrap;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    transition:
+        font-weight 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portfolio-side-nav__link--active {
+    font-weight: 800;
+}
+
+.portfolio-gallery--plener {
+    padding-top: clamp(180px, 16vw, 300px);
+}
+
+/* =========================================================
+   PORTFOLIO — SOCIAL MEDIA
+========================================================= */
+
+.portfolio-social {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(180px, 16vw, 300px)
+        10%
+        clamp(120px, 10vw, 200px);
+
+    background-image: url("../assets/backgrounds/uslugi2.svg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — PROJECT
+========================================================= */
+
+.portfolio-social__project {
+    width: 100%;
+
+    margin-bottom: clamp(55px, 5vw, 90px);
+}
+
+.portfolio-social__project:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — LABELS
+========================================================= */
+
+.portfolio-social__labels {
+    width: 100%;
+
+    margin: 0 0 clamp(20px, 1.8vw, 32px);
+
+    font-family: var(--font-main);
+    font-size: clamp(13px, 1.15vw, 21px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    color: #fff;
+}
+
+.portfolio-social__labels span {
+
+    display: inline-block;
+
+    transform: scale(1);
+
+    transform-origin: left center;
+
+    transition:
+
+        transform 0.25s ease,
+
+        font-weight 0.25s ease;
+
+    cursor: default;
+
+}
+
+.portfolio-social__labels span:hover {
+
+    transform: scale(1.08);
+
+    font-weight: 500;
+
+}
+
+.portfolio-social__labels--split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — ROW
+========================================================= */
+
+.portfolio-social__row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: clamp(16px, 1.5vw, 28px);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA — IMAGE
+========================================================= */
+
+.portfolio-social__item {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    /* CELOWO bez border-radius */
+    border-radius: 0;
+}
+
+.portfolio-social__item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+/* =========================================================
+   PORTFOLIO — VIDEO
+========================================================= */
+
+.portfolio-social__project--video {
+    margin-top: clamp(90px, 8vw, 150px);
+    margin-bottom: clamp(100px, 10vw, 180px);
+}
+
+
+
+/* pojedynczy film */
+.portfolio-social__item--video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+
+    /* VIDEO NIE MA ZAOKRĄGLONYCH ROGÓW */
+    border-radius: 0;
+
+    background: #d7d7d5;
+    cursor: pointer;
+}
+
+
+/* właściwe video */
+.portfolio-social__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PLAY
+========================================================= */
+
+.portfolio-social__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: clamp(52px, 4.5vw, 72px);
+    height: clamp(52px, 4.5vw, 72px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(20, 20, 20, 0.68);
+    color: #fff;
+
+    cursor: pointer;
+    z-index: 5;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.portfolio-social__play span {
+    display: block;
+
+    margin-left: 4px;
+
+    font-size: clamp(20px, 1.8vw, 30px);
+    line-height: 1;
+}
+
+
+.portfolio-social__play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: rgba(20, 20, 20, 0.82);
+}
+
+
+/* kiedy film leci */
+.portfolio-social__item--video.is-playing .portfolio-social__play {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* gdy film jest zatrzymany przycisk wraca */
+.portfolio-social__item--video:not(.is-playing) .portfolio-social__play {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .portfolio-social__row--video {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .portfolio-social__row--video {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================================
+   PORTFOLIO — PRODUKCJE
+========================================================= */
+
+.portfolio-produkcje {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("../assets/backgrounds/portfolio1.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+
+/* LEWA LISTA */
+
+.portfolio-produkcje__menu {
+    position: absolute;
+
+    left: 7%;
+    top: 17%;
+
+    width: clamp(220px, 20vw, 380px);
+}
+
+
+.portfolio-produkcje__menu-items {
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+
+    color: #fff;
+}
+
+
+.portfolio-produkcje__menu-items span {
+    display: block;
+}
+
+
+/* LINIA POD NAPISAMI */
+
+.portfolio-produkcje__line {
+    width: 100%;
+    height: 1px;
+
+    margin-top: clamp(14px, 1.2vw, 22px);
+
+    background: rgba(255, 255, 255, 0.85);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   PORTFOLIO — STRONY INTERNETOWE
+========================================================= */
+
+.portfolio-web {
+    position: relative;
+
+    width: 100%;
+    height: min(78vw, 1000px);
+
+    background-image: url("../assets/backgrounds/portfolio2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    overflow: hidden;
+}
+
+.portfolio-web__title {
+    position: absolute;
+
+    top: 10%;
+    left: 11%;
+
+    margin: 0;
+
+    font-family: var(--font-main);
+    font-size: clamp(15px, 1.25vw, 23px);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+
+    color: #fff;
+}
+
+/* =========================================================
+   VIDEO — ENDLESS CAROUSEL
+========================================================= */
+
+.portfolio-video-carousel {
+    position: relative;
+
+    width: 110%;
+    margin-left: -5%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VIDEO — TRACK
+========================================================= */
+
+.portfolio-video-carousel__track {
+    display: flex;
+    align-items: stretch;
+
+    width: max-content;
+
+    gap: clamp(18px, 1.5vw, 28px);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   VIDEO — POJEDYNCZY ELEMENT
+========================================================= */
+
+.portfolio-video-carousel
+.portfolio-social__item--video {
+    flex: 0 0 clamp(180px, 16vw, 305px);
+
+    width: clamp(180px, 16vw, 305px);
+
+    aspect-ratio: 9 / 16;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-video-carousel__track {
+        transform: none !important;
+    }
+
+}
