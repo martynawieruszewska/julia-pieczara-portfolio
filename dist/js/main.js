@@ -836,3 +836,42 @@ if (
 ) {
     createServicesTypingWord();
 }
+
+
+/* =========================================================
+   Mobile / tablet viewing notice
+========================================================= */
+
+if (window.innerWidth <= 1024) {
+    const viewingNotice = document.createElement("div");
+    viewingNotice.className = "viewing-notice";
+
+    viewingNotice.innerHTML = `
+        <div class="viewing-notice__box">
+            <span class="viewing-notice__eyebrow">PORTFOLIO</span>
+
+            <h2>Najlepiej oglądać<br>na większym ekranie.</h2>
+
+            <p>
+                To portfolio zostało zaprojektowane z myślą o widoku komputerowym.
+                Dla pełnego doświadczenia wizualnego polecamy otworzyć je na komputerze.
+            </p>
+
+            <button class="viewing-notice__button" type="button">
+                MIMO TO KONTYNUUJ
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(viewingNotice);
+
+    viewingNotice
+        .querySelector(".viewing-notice__button")
+        .addEventListener("click", () => {
+            viewingNotice.classList.add("is-closing");
+
+            setTimeout(() => {
+                viewingNotice.remove();
+            }, 350);
+        });
+}
